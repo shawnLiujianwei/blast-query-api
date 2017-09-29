@@ -1,0 +1,5 @@
+version: '2'
+services:
+    patsnap-blast:
+        image: local-dtr.zhihuiya.com/lifescience/blast-base
+        build: .

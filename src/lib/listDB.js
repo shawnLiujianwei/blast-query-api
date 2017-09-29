@@ -30,6 +30,7 @@ module.exports = async () => {
     if (!dbRoot) {
         throw new Error('can not find blast db folder');
     }
+    logger.info(`Using BLASTDB=${process.env.BLASTDB}`);
     try {
         if (cache.get()) {
             return cache.get();
