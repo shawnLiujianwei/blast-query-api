@@ -4,13 +4,15 @@ const path = require('path');
 const xml2js = Promise.promisifyAll(require('xml2js'));
 const UUID = require('uuid/v4');
 const CP = Promise.promisifyAll(require('child_process'));
-const logger = require('log4js').getLogger('blastjs.js');
-logger.level = 'debug';
+const logger = require('./getLogger')('blastjs.js');
+const getRedisCache = require('./getRedisCache');
+
+let redisCache = null;
 const blast = {
     stringOutput: false
 };
 
-const parseFmt6 = (content, columns) => {
+const _parseFmt6 = (content, columns) => {
     const array = content.split('\n');
     const _fill = (columns, values) => {
         if (columns.length === values.length !== 0) {
@@ -22,15 +24,16 @@ const parseFmt6 = (content, columns) => {
         }
         return null;
     }
-    const result = array.map(data => {
+    const result = array.filter(t => t).map(data => {
         const values = data.split('\t');
         return _fill(columns, values);
-    }).filter(t => t);
+    });
     return result;
 }
 
-const blaster = async (type, db, query) => {
+const _blaster = async (type, db, query) => {
     try {
+        const cacheKey = `${db}_${type}_${query}`;
         const pathW = '/tmp/' + Date.now() + '.fasta';
         fs.writeFileSync(pathW, query);
         const outFile = '/tmp/' + UUID() + '.out';
@@ -40,13 +43,20 @@ const blaster = async (type, db, query) => {
             blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         }
         logger.info('RUNNING', blastCommand);
-        const execStdout = await CP.execAsync(blastCommand);
-        const resultData = await fs.readFileAsync(outFile, 'utf8');
-        console.log(resultData);
+        if (null === redisCache) {
+            redisCache = await getRedisCache();
+        }
+        let resultData = await redisCache.getItem(cacheKey);
+        if (!resultData) {
+            await CP.execAsync(blastCommand);
+            resultData = await fs.readFileAsync(outFile, 'utf8');
+            await redisCache.setItem(cacheKey, resultData, 1800);// cache 3 minutes
+            logger.info(resultData);
+        } else {
+            logger.warn(`Using cache for command result`);
+        }
         if (!blast.stringOutput) {
-            // const result = await xml2js.parseStringAsync(resultData);
-            // return result;
-            return parseFmt6(resultData, columns);
+            return _parseFmt6(resultData, columns);
         }
         return resultData;
     } catch (err) {
@@ -61,23 +71,23 @@ blast.outputString = (bool) => {
 };
 
 blast.blastN = function (db, query) {
-    return blaster('blastn', db, query);
+    return _blaster('blastn', db, query);
 };
 
 blast.blastP = function (db, query) {
-    return blaster('blastp', db, query);
+    return _blaster('blastp', db, query);
 };
 
 blast.blastX = function (db, query) {
-    return blaster('blastx', db, query);
+    return _blaster('blastx', db, query);
 };
 
 blast.tblastN = function (db, query) {
-    return blaster('tblastn', db, query);
+    return _blaster('tblastn', db, query);
 };
 
 blast.tblastX = function (db, query) {
-    return blaster('tblastx', db, query);
+    return _blaster('tblastx', db, query);
 };
 
 
@@ -109,5 +119,6 @@ blast.makeDB = async (type, fileIn, outPath, name, cb) => {
     // });
 
 };
+
 
 module.exports = blast;
