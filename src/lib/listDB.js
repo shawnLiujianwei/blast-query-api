@@ -36,7 +36,7 @@ module.exports = async () => {
             return cache.get();
         }
         const dbs = {
-            nucleartide: [],
+            nucleotide: [],
             protein: []
         };
         const files = await fs.readdirAsync(dbRoot);
@@ -47,7 +47,7 @@ module.exports = async () => {
                 dbs.protein.push(file.split('.pin')[0]);
             }
             if (nin > -1) {
-                dbs.nucleartide.push(file.split('.nin')[0]);
+                dbs.nucleotide.push(file.split('.nin')[0]);
             }
         });
         cache.add(dbs);

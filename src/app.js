@@ -10,7 +10,7 @@ const logger = require('./lib/getLogger')('app.js');
 const app = express();
 app.use(bodyParser.json());
 app.get('/dbs', API.getDBs);
-app.post('/blast/nucleartide', API.queryNucleartide);
+app.post('/blast/nucleotide', API.queryNucleotide);
 app.post('/blast/protein', API.queryProtein);
 
 app.listen(3000, () => {

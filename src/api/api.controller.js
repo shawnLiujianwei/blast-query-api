@@ -66,7 +66,7 @@ api.queryProtein = async (req, res) => {
     }
 }
 
-api.queryNucleartide = async (req, res) => {
+api.queryNucleotide = async (req, res) => {
     try {
         const sequence = req.body.sequence;
         const dbs = await listDB();

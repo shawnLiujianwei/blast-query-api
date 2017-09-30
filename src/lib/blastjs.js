@@ -42,6 +42,7 @@ const _blaster = async (type, db, query) => {
         if (!blast.stringOutput) {
             blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         }
+        blastCommand += ' -max_target_seqs 10';
         logger.info('RUNNING', blastCommand);
         if (null === redisCache) {
             redisCache = await getRedisCache();
