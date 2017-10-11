@@ -31,7 +31,7 @@ const _parseFmt6 = (content, columns) => {
     return result;
 }
 
-const _blaster = async (type, db, query) => {
+const _blaster = async (type, db, query, limit) => {
     try {
         const cacheKey = `${db}_${type}_${query}`;
         const pathW = '/tmp/' + Date.now() + '.fasta';
@@ -42,7 +42,7 @@ const _blaster = async (type, db, query) => {
         if (!blast.stringOutput) {
             blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         }
-        blastCommand += ' -max_target_seqs 10';
+        blastCommand += ` -max_target_seqs ${limit || 10}`;
         logger.info('RUNNING', blastCommand);
         if (null === redisCache) {
             redisCache = await getRedisCache();
@@ -71,12 +71,12 @@ blast.outputString = (bool) => {
     blast.stringOutput = !!(!bool || bool === true);
 };
 
-blast.blastN = function (db, query) {
-    return _blaster('blastn', db, query);
+blast.blastN = function (db, query, limit) {
+    return _blaster('blastn', db, query, limit);
 };
 
-blast.blastP = function (db, query) {
-    return _blaster('blastp', db, query);
+blast.blastP = function (db, query, limit) {
+    return _blaster('blastp', db, query, limit);
 };
 
 blast.blastX = function (db, query) {

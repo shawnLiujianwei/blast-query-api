@@ -28,13 +28,13 @@ const _validatePost = (req, dbs) => {
     }
 }
 
-const _execQuery = async (dbs, command, query) => {
+const _execQuery = async (dbs, command, query, limit) => {
     const dbCount = dbs.length;
     const results = [];
     let error = null;
     for (let i = 0; i < dbCount; i++) {
         try {
-            const temp = await blast[command](dbs[i], query);
+            const temp = await blast[command](dbs[i], query, limit);
             Array.prototype.push.apply(results, temp);
         } catch (err) {
             error = err;
@@ -52,7 +52,7 @@ api.queryProtein = async (req, res) => {
         const dbs = await listDB();
         const targetDbs = dbs.protein;
         _validatePost(req, targetDbs);
-        const results = await _execQuery(targetDbs, 'blastP', sequence);
+        const results = await _execQuery(targetDbs, 'blastP', sequence, req.query.limit);
         res.json({
             success: true,
             data: results
@@ -72,7 +72,7 @@ api.queryNucleotide = async (req, res) => {
         const dbs = await listDB();
         const targetDbs = dbs.nucleartide;
         _validatePost(req, targetDbs);
-        const results = await _execQuery(targetDbs, 'blastN', sequence);
+        const results = await _execQuery(targetDbs, 'blastN', sequence, req.query.limit);
         res.json({
             success: true,
             data: results
