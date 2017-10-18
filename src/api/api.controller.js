@@ -68,6 +68,7 @@ api.queryProtein = async (req, res) => {
 
 api.queryNucleotide = async (req, res) => {
     try {
+        logger.info('query nucleotide...');
         const sequence = req.body.sequence;
         const dbs = await listDB();
         const targetDbs = dbs.nucleotide;

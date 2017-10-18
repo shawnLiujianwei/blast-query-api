@@ -52,7 +52,6 @@ const _blaster = async (type, db, query, limit) => {
         }
         let resultData = await redisCache.getItem(cacheKey);
         if (!resultData) {
-            logger.info(blastCommand);
             await CP.execAsync(blastCommand);
             resultData = await fs.readFileAsync(outFile, 'utf8');
             await redisCache.setItem(cacheKey, resultData, 1800);// cache 3 minutes
