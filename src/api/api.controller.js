@@ -70,7 +70,7 @@ api.queryNucleotide = async (req, res) => {
     try {
         const sequence = req.body.sequence;
         const dbs = await listDB();
-        const targetDbs = dbs.nucleartide;
+        const targetDbs = dbs.nucleotide;
         _validatePost(req, targetDbs);
         const results = await _execQuery(targetDbs, 'blastN', sequence, req.query.limit);
         res.json({
@@ -86,42 +86,42 @@ api.queryNucleotide = async (req, res) => {
     }
 }
 
-api.blast = async (req, res) => {
-
-    try {
-        if (req.body) {
-            console.log(req.body);
-            const query = req.body.query;
-            const db = req.body.db;
-
-            if (req.body.useString) {
-                blast.outputString(true);
-            }
-            if (query && query.length > 0) {
-                if (db && db.name && db.type) {
-
-                    const dbPath = path.join(dbRoot, db.name);
-                    let output = null;
-                    if (db.type === 'pin') {
-                        output = await blast.blastP(dbPath, query);
-                    } else {
-                        output = await blast.blastN(dbPath, query);
-                    }
-                    return res.json({
-                        data: output
-                    });
-                } else {
-                    return res.json({error: 'did not receive any dbs'});
-                }
-            } else {
-                return res.json({error: 'did not receive query'});
-            }
-        } else {
-            return res.json({error: 'did not receive body'});
-        }
-    } catch (err) {
-        res.json({error: err.message});
-    }
-};
+// api.blast = async (req, res) => {
+//
+//     try {
+//         if (req.body) {
+//             console.log(req.body);
+//             const query = req.body.query;
+//             const db = req.body.db;
+//
+//             if (req.body.useString) {
+//                 blast.outputString(true);
+//             }
+//             if (query && query.length > 0) {
+//                 if (db && db.name && db.type) {
+//
+//                     const dbPath = path.join(dbRoot, db.name);
+//                     let output = null;
+//                     if (db.type === 'pin') {
+//                         output = await blast.blastP(dbPath, query);
+//                     } else {
+//                         output = await blast.blastN(dbPath, query);
+//                     }
+//                     return res.json({
+//                         data: output
+//                     });
+//                 } else {
+//                     return res.json({error: 'did not receive any dbs'});
+//                 }
+//             } else {
+//                 return res.json({error: 'did not receive query'});
+//             }
+//         } else {
+//             return res.json({error: 'did not receive body'});
+//         }
+//     } catch (err) {
+//         res.json({error: err.message});
+//     }
+// };
 
 module.exports = api;
