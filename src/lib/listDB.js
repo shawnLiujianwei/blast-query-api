@@ -36,22 +36,28 @@ module.exports = async () => {
             return cache.get();
         }
         const dbs = {
-            nucleotide: [],
-            protein: []
+            nucleotide: {},
+            protein: {}
         };
+        const getDBName = str => str.replace(/(.[0-9]{2,4})/, '');
         const files = await fs.readdirAsync(dbRoot);
         files.forEach(file => {
             const pin = file.indexOf('.pin');
             const nin = file.indexOf('.nin');
             if (pin > -1) {
-                dbs.protein.push(file.split('.pin')[0]);
+                dbs.protein[getDBName(file.split('.pin')[0])] = 1;
+                // dbs.protein.push(file.split('.pin')[0]);
             }
             if (nin > -1) {
-                dbs.nucleotide.push(file.split('.nin')[0]);
+                dbs.nucleotide[getDBName(file.split('.nin')[0])] = 1;
+                // dbs.nucleotide.push(file.split('.nin')[0]);
             }
         });
         cache.add(dbs);
-        return dbs;
+        return {
+            nucleotide: Object.keys(dbs.nucleotide),
+            protein: Object.keys(dbs.protein)
+        };
     } catch (err) {
         logger.error(err);
         throw new Error('failed to list blast db');
