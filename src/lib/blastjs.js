@@ -6,6 +6,7 @@ const UUID = require('uuid/v4');
 const CP = Promise.promisifyAll(require('child_process'));
 const logger = require('./getLogger')('blastjs.js');
 const getRedisCache = require('./getRedisCache');
+const os = require('os');
 
 let redisCache = null;
 const blast = {
@@ -44,6 +45,7 @@ const _blaster = async (type, db, query, limit) => {
             blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         }
         blastCommand += ` -max_target_seqs ${limit || 10}`;
+        blastCommand += ` -num_threads ${os.cpus().length - 1}`;
         logger.info('RUNNING', blastCommand);
         if (null === redisCache) {
             redisCache = await getRedisCache();
