@@ -38,7 +38,8 @@ const _blaster = async (type, db, query, limit) => {
         fs.writeFileSync(pathW, query);
         const outFile = '/tmp/' + UUID() + '.out';
         let blastCommand = type + ' -query ' + pathW + ' -out ' + outFile + ' -db ' + db;
-        const columns = ['qseqid', 'sseqid', 'evalue', 'bitscore'];
+        //const columns = ['qseqid', 'sseqid', 'evalue', 'bitscore'];
+        const columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
         if (!blast.stringOutput) {
             blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         }

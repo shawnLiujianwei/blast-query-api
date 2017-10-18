@@ -1,0 +1,1 @@
+Query_1	AAE38413.1_Sequence_3_from_patent_US_5994097	100.000	400	0	0	1	400	1	400	0.0	820
