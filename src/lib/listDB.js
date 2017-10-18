@@ -53,11 +53,12 @@ module.exports = async () => {
                 // dbs.nucleotide.push(file.split('.nin')[0]);
             }
         });
-        cache.add(dbs);
-        return {
+        const result = {
             nucleotide: Object.keys(dbs.nucleotide),
             protein: Object.keys(dbs.protein)
         };
+        cache.add(result);
+        return result;
     } catch (err) {
         logger.error(err);
         throw new Error('failed to list blast db');
