@@ -74,7 +74,7 @@ api.queryNucleotide = async (req, res) => {
         const targetDbs = dbs.nucleotide;
         _validatePost(req, targetDbs);
         logger.info('query nucleotide from dbs:', targetDbs);
-        const results = await _execQuery(targetDbs, 'blastN', sequence, req.query.limit, query.noCache);
+        const results = await _execQuery(targetDbs, 'blastN', sequence, req.query.limit, req.query.noCache);
         res.json({
             success: true,
             data: results
