@@ -8,7 +8,7 @@ let redisClient = null;
 module.exports = function () {
     if (!redisClient) {
         const redisConfig = {
-            host: process.env.redisHost || 'localhost',
+            host: process.env.redisHost || '192.168.3.89',
             port: process.env.redisPort || 6379
         };
         redisClient = Promise.promisifyAll(redis.createClient(redisConfig));
