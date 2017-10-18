@@ -28,13 +28,13 @@ const _validatePost = (req, dbs) => {
     }
 }
 
-const _execQuery = async (dbs, command, query, limit) => {
+const _execQuery = async (dbs, command, query, limit,noCache) => {
     const dbCount = dbs.length;
     const results = [];
     let error = null;
     for (let i = 0; i < dbCount; i++) {
         try {
-            const temp = await blast[command](dbs[i], query, limit);
+            const temp = await blast[command](dbs[i], query, limit, noCache);
             Array.prototype.push.apply(results, temp);
         } catch (err) {
             error = err;
@@ -53,7 +53,7 @@ api.queryProtein = async (req, res) => {
         const targetDbs = dbs.protein;
         _validatePost(req, targetDbs);
         logger.info('query protein from dbs:', targetDbs);
-        const results = await _execQuery(targetDbs, 'blastP', sequence, req.query.limit);
+        const results = await _execQuery(targetDbs, 'blastP', sequence, req.query.limit, req.query.noCache);
         res.json({
             success: true,
             data: results

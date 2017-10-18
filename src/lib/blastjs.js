@@ -32,7 +32,7 @@ const _parseFmt6 = (content, columns) => {
     return result;
 }
 
-const _blaster = async (type, db, query, limit) => {
+const _blaster = async (type, db, query, limit, noCache) => {
     try {
         const cacheKey = `${db}_${type}_${query}`;
         const pathW = '/tmp/' + Date.now() + '.fasta';
@@ -50,7 +50,10 @@ const _blaster = async (type, db, query, limit) => {
         if (null === redisCache) {
             redisCache = await getRedisCache();
         }
-        let resultData = await redisCache.getItem(cacheKey);
+        let resultData = null;
+        if (!noCache) {
+            resultData = await redisCache.getItem(cacheKey);
+        }
         if (!resultData) {
             await CP.execAsync(blastCommand);
             resultData = await fs.readFileAsync(outFile, 'utf8');
@@ -74,12 +77,12 @@ blast.outputString = (bool) => {
     blast.stringOutput = !!(!bool || bool === true);
 };
 
-blast.blastN = function (db, query, limit) {
-    return _blaster('blastn', db, query, limit);
+blast.blastN = function (db, query, limit, noCache) {
+    return _blaster('blastn', db, query, limit, noCache);
 };
 
-blast.blastP = function (db, query, limit) {
-    return _blaster('blastp', db, query, limit);
+blast.blastP = function (db, query, limit, noCache) {
+    return _blaster('blastp', db, query, limit, noCache);
 };
 
 blast.blastX = function (db, query) {
