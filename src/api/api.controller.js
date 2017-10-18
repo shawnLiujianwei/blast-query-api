@@ -52,6 +52,7 @@ api.queryProtein = async (req, res) => {
         const dbs = await listDB();
         const targetDbs = dbs.protein;
         _validatePost(req, targetDbs);
+        logger.info('query protein from dbs:', targetDbs);
         const results = await _execQuery(targetDbs, 'blastP', sequence, req.query.limit);
         res.json({
             success: true,
@@ -68,11 +69,11 @@ api.queryProtein = async (req, res) => {
 
 api.queryNucleotide = async (req, res) => {
     try {
-        logger.info('query nucleotide...');
         const sequence = req.body.sequence;
         const dbs = await listDB();
         const targetDbs = dbs.nucleotide;
         _validatePost(req, targetDbs);
+        logger.info('query nucleotide from dbs:', targetDbs);
         const results = await _execQuery(targetDbs, 'blastN', sequence, req.query.limit);
         res.json({
             success: true,
