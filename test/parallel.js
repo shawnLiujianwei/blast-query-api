@@ -2,18 +2,26 @@
  * Created by shawn-liu on 17/10/18.
  */
 const rp = require('request-promise');
-const sequences = 'CTGCAGCTTCCACGAACCTCGAGCGCAAGGAGTTAGAATCGGAGGAGAAAGTGTGTACATAACTCTGAAGCAGATCGGATGTCATCCGGCGTGCCGGTGAGAGGTTTTTGTCAGTTGCGTTGCGTTGGATTCTGGCTGTGAGTATTATTGTCGCGCAAAGAATAAGTAATTTTAGTTGTGCCTCATTCGAGTTCAGAATGAGCTCTTACGATTACTCTTATCTACTCAGAGTATAATAGC';
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const Promise = require('bluebird');
-const url = 'http://localhost:3000/blast/nucleotide';
 
+const sequences = 'CTGCAGCTTCCACGAACCTCGAGCGCAAGGAGTTAGAATCGGAGGAGAAAGTGTGTACATAACTCTGAAGCAGATCGGATGTCATCCGGCGTGCCGGTGAGAGGTTTTTGTCAGTTGCGTTGCGTTGGATTCTGGCTGTGAGTATTATTGTCGCGCAAAGAATAAGTAATTTTAGTTGTGCCTCATTCGAGTTCAGAATGAGCTCTTACGATTACTCTTATCTACTCAGAGTATAATAGC';
+const Promise = require('bluebird');
+
+const getArray = (count) => {
+    const array = [];
+    for (let i = 0; i < count; i++) {
+        array.push(i);
+    }
+    return array;
+}
 
 const run = num => {
     console.log(`Run ---${num}---- at: ${new Date()}`);
-    const seq = sequences.substring(num * Math.round(Math.random() * 10));
+    const seqF = process.env.seq || sequences;
+    const seq = seqF.substring(num * Math.round(Math.random() * 10));
+    const dbType = process.env.dbType || 'nucleotide';
     return rp({
         method: 'POST',
-        uri: 'http://localhost:3000/blast/nucleotide?noCache=true',
+        uri: `http://localhost:3001/blast/${dbType}?noCache=true`,
         body: {
             sequence: seq
         },
@@ -27,10 +35,11 @@ const run = num => {
 }
 (() => {
     console.log(`start at: ${new Date()}`);
-    Promise.map(array, num => {
+    const con = process.env.con ? parseInt(process.env.con) : 10;
+    Promise.map(getArray(con), (num) => {
         return run(num);
     }, {
-        concurrency: 10
+        concurrency: con
     }).then(() => {
         console.log(`end at: ${new Date()}`);
     });

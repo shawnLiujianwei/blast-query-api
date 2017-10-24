@@ -1,1 +1,7 @@
+qseqid  sseqid pident length mismatch gapopen qstart qend sstart send evalue    bitscore
+
 Query_1	AAE38413.1_Sequence_3_from_patent_US_5994097	100.000	400	0	0	1	400	1	400	0.0	820
+Query_1	AAE56974.1_Sequence_24_from_patent_US_6169173	100.000	400	0	0	1	400	21	420	0.0	820
+Query_1	AAC87330.1_Sequence_5_from_patent_US_5750353	93.282	387	24	1	1	387	1	385	0.0	711
+Query_1	AKX79337.1_Sequence_317_from_patent_US_8999654	88.698	407	38	2	1	400	1	406	0.0	707
+Query_1	AAE56966.1_Sequence_14_from_patent_US_6169173	91.000	400	35	1	1	400	16	414	0.0	701

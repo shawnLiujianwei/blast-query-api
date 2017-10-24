@@ -1,0 +1,734 @@
+BLASTP 2.6.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: out.fa
+           2,054,527 sequences; 400,582,099 total letters
+
+
+
+Query=
+Length=400
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  AAE38413.1_Sequence_3_from_patent_US_5994097 AAE56973.1_Sequenc...  820     0.0
+  AAE56974.1_Sequence_24_from_patent_US_6169173 AAT21522.1_Sequen...  820     0.0
+  AAC87330.1_Sequence_5_from_patent_US_5750353 AAE56978.1_Sequenc...  711     0.0
+  AKX79337.1_Sequence_317_from_patent_US_8999654                      707     0.0
+  AAE56966.1_Sequence_14_from_patent_US_6169173 AAT21514.1_Sequen...  701     0.0
+  AAC87331.1_Sequence_6_from_patent_US_5750353 AAQ31659.1_Sequenc...  694     0.0
+  AAC87332.1_Sequence_7_from_patent_US_5750353 AAQ31660.1_Sequenc...  431     4e-148
+  ACC29791.1_Sequence_94_from_patent_US_7348140                       371     1e-124
+  AAE56975.1_Sequence_26_from_patent_US_6169173 AAT21523.1_Sequen...  367     5e-123
+  AAB14684.1_Sequence_6_from_patent_US_5541071 ACS10647.1_Sequenc...  367     7e-123
+  ACP57169.1_Sequence_1298_from_patent_US_7482117 ADS30766.1_Sequ...  366     1e-122
+  AAC87328.1_Sequence_3_from_patent_US_5750353 AAQ31656.1_Sequenc...  366     1e-122
+  ACC29790.1_Sequence_93_from_patent_US_7348140                       365     3e-122
+  AAE56977.1_Sequence_29_from_patent_US_6169173 AAT21525.1_Sequen...  363     9e-122
+  AAC87329.1_Sequence_4_from_patent_US_5750353 AAB14683.1_Sequenc...  361     8e-121
+  AGN05808.1_Sequence_78_from_patent_US_8440391                       361     1e-120
+  AGN05814.1_Sequence_112_from_patent_US_8440391 AGN05817.1_Seque...  358     8e-120
+  AKX79339.1_Sequence_319_from_patent_US_8999654                      351     9e-117
+  AAC87326.1_Sequence_1_from_patent_US_5750353 AAQ31654.1_Sequenc...  345     3e-114
+  AAC87327.1_Sequence_2_from_patent_US_5750353 AAQ31655.1_Sequenc...  334     5e-110
+  AAE56967.1_Sequence_16_from_patent_US_6169173 AAT21515.1_Sequen...  332     2e-109
+  ACE46339.1_Sequence_8_from_patent_US_7378492                        323     8e-107
+  ACE46338.1_Sequence_7_from_patent_US_7378492                        267     3e-85
+  ACP57170.1_Sequence_1299_from_patent_US_7482117 ADS30767.1_Sequ...  234     2e-70
+  AAW99691.1_Sequence_22_from_patent_US_6835546 ACC34681.1_Sequen...  164     1e-43
+  AAT23221.1_Sequence_44_from_patent_US_6709831 AAX06391.1_Sequen...  159     6e-43
+  AAW10497.1_Sequence_3_from_patent_US_6803232                        154     3e-41
+  AKX79558.1_Sequence_539_from_patent_US_8999654                      152     1e-40
+  AKX79246.1_Sequence_209_from_patent_US_8999654                      149     3e-39
+  AAT23219.1_Sequence_6_from_patent_US_6709831 AAX06389.1_Sequenc...  148     6e-39
+  AKX79557.1_Sequence_538_from_patent_US_8999654                      149     1e-38
+  ABW44247.1_Sequence_8_from_patent_US_7258971 AHE01052.1_Sequenc...  149     1e-38
+  AAW10496.1_Sequence_2_from_patent_US_6803232                        147     1e-38
+  AKX79244.1_Sequence_206_from_patent_US_8999654                      145     6e-38
+  AKX79780.1_Sequence_761_from_patent_US_8999654                      144     1e-37
+  AAN20116.1_Sequence_2_from_patent_US_6410701                        142     4e-37
+  CAC39506.1_unnamed_protein_product_[Homo_sapiens] AAN20267.1_Se...  143     4e-37
+  AJL27791.1_Sequence_320_from_patent_US_8703915                      143     5e-37
+  ABZ31149.1_Sequence_5087_from_patent_US_7314974 AME60420.1_Sequ...  142     6e-37
+  AAW10843.1_Sequence_551_from_patent_US_6806054 ABJ30555.1_Seque...  143     7e-37
+  AAS22741.1_Sequence_22_from_patent_US_6664229 ABU39286.1_Sequen...  142     7e-37
+  AAW10842.1_Sequence_549_from_patent_US_6806054 ABJ30554.1_Seque...  142     1e-36
+  CAC34687.1_unnamed_protein_product_[Homo_sapiens] AAE86872.1_Se...  142     1e-36
+  AKX79779.1_Sequence_760_from_patent_US_8999654                      140     4e-36
+  AAE77741.1_Sequence_1_from_patent_US_6258943 AAE92560.1_Sequenc...  139     2e-35
+  AGA43045.1_Sequence_20_from_patent_US_8324172 AGD90580.1_Sequen...  128     3e-35
+  AAW10831.1_Sequence_527_from_patent_US_6806054 ABJ30543.1_Seque...  137     4e-35
+  CAD69355.1_unnamed_protein_product_[Homo_sapiens]                   137     4e-35
+  AAT23217.1_Sequence_2_from_patent_US_6709831 AAX06387.1_Sequenc...  138     5e-35
+  AAW99687.1_Sequence_14_from_patent_US_6835546 ACC34677.1_Sequen...  138     6e-35
+  AAE56970.1_Sequence_19_from_patent_US_6169173 AAT21518.1_Sequen...  136     6e-35
+  AAW10832.1_Sequence_529_from_patent_US_6806054 ABJ30544.1_Seque...  138     7e-35
+  AAE68758.1_Sequence_10_from_patent_US_6225080                       137     8e-35
+  AAW99681.1_Sequence_2_from_patent_US_6835546 ACC34671.1_Sequenc...  139     9e-35
+  AAW99688.1_Sequence_16_from_patent_US_6835546 ACC34678.1_Sequen...  138     9e-35
+  AJN70158.1_Sequence_96_from_patent_US_8901094                       135     1e-34
+  AAE41201.1_Sequence_3_from_patent_US_6001970                        136     1e-34
+  ADI53415.1_Sequence_2_from_patent_US_7422898 ADL74110.1_Sequenc...  134     9e-34
+  AHE20048.1_Sequence_61_from_patent_US_8574857                       133     2e-33
+  CAD82889.1_unnamed_protein_product_[Homo_sapiens] ABA32566.1_Se...  133     2e-33
+  ADS78964.1_Sequence_38_from_patent_US_7816492 AED52627.1_Sequen...  133     3e-33
+  AAE10367.1_Sequence_2_from_patent_US_5814463                        131     3e-33
+  AAB78609.1_Sequence_2_from_patent_US_5656749                        130     8e-33
+  AAY05200.1_Sequence_20_from_patent_US_6864229 ADL72533.1_Sequen...  121     1e-32
+  CAD97474.1_HFGAN72Y_[Homo_sapiens] AAS22742.1_Sequence_23_from_...  130     2e-32
+  AAW99685.1_Sequence_10_from_patent_US_6835546 ACC34675.1_Sequen...  131     3e-32
+  AAW99686.1_Sequence_12_from_patent_US_6835546 ACC34676.1_Sequen...  131     4e-32
+  AAN20117.1_Sequence_4_from_patent_US_6410701                        127     1e-31
+  AAN20118.1_Sequence_6_from_patent_US_6410701                        127     1e-31
+  CAD69521.1_unnamed_protein_product_[Homo_sapiens]                   128     3e-31
+  ACC19101.1_Sequence_2_from_patent_US_7338772 ADS58753.1_Sequenc...  127     3e-31
+  AAW99689.1_Sequence_18_from_patent_US_6835546 ACC34679.1_Sequen...  127     8e-31
+  ADC20438.1_Sequence_922_from_patent_US_7638288 ADC20439.1_Seque...  125     1e-30
+  AAW10797.1_Sequence_459_from_patent_US_6806054 ABJ30509.1_Seque...  125     1e-30
+  ABZ31338.1_Sequence_5276_from_patent_US_7314974 ABZ31699.1_Sequ...  127     2e-30
+  CAC42565.1_unnamed_protein_product_[Homo_sapiens] AAR66470.1_Se...  126     2e-30
+  CAC42587.1_unnamed_protein_product_[Caenorhabditis_elegans] AAR...  126     3e-30
+  AAE56972.1_Sequence_21_from_patent_US_6169173 AAT21520.1_Sequen...  124     4e-30
+  AGN05815.1_Sequence_128_from_patent_US_8440391                      124     5e-30
+  AKX79323.1_Sequence_303_from_patent_US_8999654                      123     6e-30
+  AKX79782.1_Sequence_763_from_patent_US_8999654                      124     8e-30
+  CAD69475.1_unnamed_protein_product_[Homo_sapiens]                   123     9e-30
+  CAC42563.1_unnamed_protein_product_[Homo_sapiens] AAR66468.1_Se...  122     1e-29
+  AAT23220.1_Sequence_8_from_patent_US_6709831 AAX06390.1_Sequenc...  123     1e-29
+  AKX79311.1_Sequence_291_from_patent_US_8999654                      122     2e-29
+  AKX79262.1_Sequence_233_from_patent_US_8999654                      123     2e-29
+  ACC29800.1_Sequence_112_from_patent_US_7348140                      121     3e-29
+  ACC29799.1_Sequence_111_from_patent_US_7348140                      121     3e-29
+  AAE45724.1_Sequence_2_from_patent_US_6087154 AJN70129.1_Sequenc...  120     3e-29
+  CAA01787.1_NPY_Y1_receptor_gene_[Homo_sapiens] CAA01819.1_neuro...  120     3e-29
+  AAE30716.1_Sequence_4_from_patent_US_5965392 AAE36422.1_Sequenc...  121     5e-29
+  AAB56660.1_Sequence_2_from_patent_US_5602024 AAE32399.1_Sequenc...  121     5e-29
+  AAP02234.1_Sequence_8_from_patent_US_6528303                        121     5e-29
+  AAP02233.1_Sequence_6_from_patent_US_6528303                        120     1e-28
+  AAW10830.1_Sequence_525_from_patent_US_6806054 ABJ30542.1_Seque...  119     1e-28
+  AKX79861.1_Sequence_1491_from_patent_US_8999654                     120     2e-28
+  ADI53420.1_Sequence_9_from_patent_US_7422898 ADL74115.1_Sequenc...  119     2e-28
+  AAW13848.1_Sequence_15_from_patent_US_6818445                       118     2e-28
+  AQN59630.1_Sequence_11_from_patent_US_9422359                       120     3e-28
+  AJN70142.1_Sequence_53_from_patent_US_8901094                       119     4e-28
+  AKX79686.1_Sequence_667_from_patent_US_8999654                      119     4e-28
+  AAB11111.1_Sequence_48_from_patent_US_5508384                       117     5e-28
+  AAE30715.1_Sequence_2_from_patent_US_5965392 AAE63919.1_Sequenc...  118     5e-28
+  ABH71886.1_Sequence_4_from_patent_US_7034034                        117     6e-28
+  CAC42585.1_unnamed_protein_product_[Homo_sapiens] AAR66517.1_Se...  118     7e-28
+  AAB11113.1_Sequence_50_from_patent_US_5508384                       116     8e-28
+  AAQ53806.1_Sequence_2_from_patent_US_6599718 AAQ53814.1_Sequenc...  117     1e-27
+  AKX79867.1_Sequence_1503_from_patent_US_8999654                     115     2e-27
+  AME80567.1_Sequence_134_from_patent_US_9029080                      115     3e-27
+  CAC42584.1_unnamed_protein_product_[Homo_sapiens] AAR66516.1_Se...  115     4e-27
+  CAD82895.1_unnamed_protein_product_[Mus_sp.]                        115     4e-27
+  AME80576.1_Sequence_170_from_patent_US_9029080                      115     6e-27
+  AAB54703.1_Sequence_7_from_patent_US_5621079 AAE28183.1_Sequenc...  114     1e-26
+  AAE28182.1_Sequence_13_from_patent_US_5958709 ABA13015.1_Sequen...  113     1e-26
+  AME80574.1_Sequence_162_from_patent_US_9029080                      114     1e-26
+  ADS88059.1_Sequence_4_from_patent_US_7824866 AKX79568.1_Sequenc...  114     1e-26
+  AJN70182.1_Sequence_158_from_patent_US_8901094                      113     2e-26
+  ADI53421.1_Sequence_10_from_patent_US_7422898 ADL74116.1_Sequen...  114     2e-26
+  AAE37702.1_Sequence_14_from_patent_US_5989920 AAR76688.1_Sequen...  114     2e-26
+  AAE73559.1_Sequence_2_from_patent_US_6242251 AAE73560.1_Sequenc...  114     2e-26
+  AAE44539.1_Sequence_3_from_patent_US_6080848 AEC33405.1_Sequenc...  113     2e-26
+  AME80575.1_Sequence_166_from_patent_US_9029080                      114     2e-26
+  AAW10834.1_Sequence_533_from_patent_US_6806054 ABJ30546.1_Seque...  113     4e-26
+  ABH71887.1_Sequence_7_from_patent_US_7034034                        113     5e-26
+  AED45549.1_Sequence_1467_from_patent_US_7892730                     111     5e-26
+  CCA64013.1_unnamed_protein_product_[Spodoptera_littoralis]          111     6e-26
+  AAW99690.1_Sequence_20_from_patent_US_6835546 ACC34680.1_Sequen...  113     6e-26
+  AKX79310.1_Sequence_290_from_patent_US_8999654                      112     7e-26
+  AAE36420.1_Sequence_2_from_patent_US_5985616                        112     8e-26
+  AAP02232.1_Sequence_4_from_patent_US_6528303                        112     8e-26
+  AJN70157.1_Sequence_94_from_patent_US_8901094 AMF21934.1_Sequen...  111     9e-26
+  AAE30717.1_Sequence_6_from_patent_US_5965392 AAE36421.1_Sequenc...  112     9e-26
+  AKX79313.1_Sequence_293_from_patent_US_8999654                      112     1e-25
+  AAB56661.1_Sequence_4_from_patent_US_5602024 AAE32400.1_Sequenc...  112     1e-25
+  CAC42577.1_unnamed_protein_product_[Homo_sapiens] AAR66482.1_Se...  110     1e-25
+  AAE80976.1_Sequence_5_from_patent_US_6287788 AAE81198.1_Sequenc...  110     2e-25
+  CBE74693.1_unnamed_protein_product_[Mus_musculus] CDM63487.1_un...  110     2e-25
+  ABJ42822.1_Sequence_11_from_patent_US_7115375                       110     2e-25
+  AAQ27078.1_Sequence_5_from_patent_US_6562945 ACE40497.1_Sequenc...  110     2e-25
+  AJN70180.1_Sequence_155_from_patent_US_8901094                      110     3e-25
+  CCA64008.1_unnamed_protein_product_[Spodoptera_littoralis]          109     3e-25
+  AAW10794.1_Sequence_453_from_patent_US_6806054 ABJ30506.1_Seque...  110     4e-25
+  AMF21933.1_Sequence_8_from_patent_US_9057726                        109     6e-25
+  CAD82894.1_unnamed_protein_product_[Mus_sp.]                        109     6e-25
+  ADI53416.1_Sequence_4_from_patent_US_7422898 ADL74111.1_Sequenc...  109     7e-25
+  ADS78965.1_Sequence_75_from_patent_US_7816492                       108     8e-25
+  AAE32940.1_Sequence_8_from_patent_US_5972624 AAE81197.1_Sequenc...  108     9e-25
+  CAD79723.1_unnamed_protein_product_[Homo_sapiens]                   107     9e-25
+  AAN20094.1_Sequence_2_from_patent_US_6410686                        108     9e-25
+  AAQ27076.1_Sequence_2_from_patent_US_6562945 ACE40495.1_Sequenc...  108     1e-24
+  AKX79800.1_Sequence_781_from_patent_US_8999654                      108     1e-24
+  AME80568.1_Sequence_138_from_patent_US_9029080                      109     1e-24
+  CAA02627.1_unnamed_protein_product_[Homo_sapiens] AKX79799.1_Se...  108     1e-24
+  AAQ32103.1_Sequence_17_from_patent_US_6566367 ABA65953.1_Sequen...  108     1e-24
+  AAW10820.1_Sequence_505_from_patent_US_6806054 ABJ30532.1_Seque...  108     1e-24
+  AAQ27077.1_Sequence_4_from_patent_US_6562945 ACE40496.1_Sequenc...  108     1e-24
+  AAE81199.1_Sequence_7_from_patent_US_6287855 AAE88502.1_Sequenc...  108     1e-24
+  CBE74695.1_unnamed_protein_product_[Homo_sapiens] AEC33406.1_Se...  107     1e-24
+  AMF21931.1_Sequence_4_from_patent_US_9057726                        107     2e-24
+  ADS77752.1_Sequence_138_from_patent_US_7816076                      108     2e-24
+  AAE50228.1_Sequence_46_from_patent_US_6114139 AAE81201.1_Sequen...  107     2e-24
+  AAE50259.1_Sequence_343_from_patent_US_6114139                      107     2e-24
+  ABZ32159.1_Sequence_6097_from_patent_US_7314974 AME61430.1_Sequ...  107     2e-24
+  ABJ42821.1_Sequence_10_from_patent_US_7115375                       107     2e-24
+  AAW10856.1_Sequence_577_from_patent_US_6806054 ABJ30568.1_Seque...  107     2e-24
+  AJL53160.1_Sequence_2_from_patent_US_8729040 AKW98099.1_Sequenc...  108     3e-24
+  AAE81203.1_Sequence_20_from_patent_US_6287855 AAP62116.1_Sequen...  107     3e-24
+  AAE81200.1_Sequence_9_from_patent_US_6287855 AAE88503.1_Sequenc...  106     3e-24
+  ACC19116.1_Sequence_20_from_patent_US_7338772 ADI53419.1_Sequen...  107     4e-24
+  AAE68757.1_Sequence_9_from_patent_US_6225080                        107     4e-24
+  AKX79760.1_Sequence_741_from_patent_US_8999654                      105     6e-24
+  AAE50258.1_Sequence_342_from_patent_US_6114139                      105     6e-24
+  ABH71889.1_Sequence_17_from_patent_US_7034034                       106     6e-24
+  ABP07731.1_Sequence_7_from_patent_US_7179886                        105     1e-23
+  CAC42566.1_unnamed_protein_product_[Homo_sapiens] AAR66471.1_Se...  105     1e-23
+  ABZ33006.1_Sequence_6944_from_patent_US_7314974 AME62277.1_Sequ...  105     1e-23
+  AJN70185.1_Sequence_166_from_patent_US_8901094                      107     1e-23
+  AAB44816.1_Sequence_14_from_patent_US_5585476 AAE00848.1_Sequen...  105     1e-23
+  AAN27688.1_Sequence_2_from_patent_US_6441133                        104     2e-23
+  AAC91564.1_Sequence_2_from_patent_US_5780245 CAA02338.1_unnamed...  106     2e-23
+  AKX79630.1_Sequence_611_from_patent_US_8999654                      106     2e-23
+  AAA95714.1_Sequence_26_from_patent_US_5484886 ADC20436.1_Sequen...  105     2e-23
+  AQN59632.1_Sequence_13_from_patent_US_9422359                       106     3e-23
+  AME80566.1_Sequence_130_from_patent_US_9029080                      105     3e-23
+  AAW10795.1_Sequence_455_from_patent_US_6806054 ABJ30507.1_Seque...  104     3e-23
+  CAC42558.1_unnamed_protein_product_[Homo_sapiens] AAR66463.1_Se...  104     4e-23
+  AAE68759.1_Sequence_11_from_patent_US_6225080                       102     6e-23
+  CAF04024.1_unnamed_protein_product,_partial_[Heliothis_virescens]   104     6e-23
+  AME80577.1_Sequence_174_from_patent_US_9029080                      105     6e-23
+  CAC42573.1_unnamed_protein_product_[Homo_sapiens] AAR66478.1_Se...  103     7e-23
+  AME80569.1_Sequence_142_from_patent_US_9029080                      103     7e-23
+  ABY15067.1_Sequence_442_from_patent_US_7306913 ACP57183.1_Seque...  103     8e-23
+  ABY15068.1_Sequence_443_from_patent_US_7306913 ACP57185.1_Seque...  103     9e-23
+  ADL74427.1_Sequence_2_from_patent_US_7698067 AED56010.1_Sequenc...  102     1e-22
+  ADA06529.1_Sequence_30_from_patent_US_7601505                       100     1e-22
+  AKX79773.1_Sequence_754_from_patent_US_8999654                      102     1e-22
+  AKX79600.1_Sequence_581_from_patent_US_8999654                      102     1e-22
+  AAE56968.1_Sequence_17_from_patent_US_6169173 AAT21516.1_Sequen...  102     1e-22
+  ABZ32825.1_Sequence_6763_from_patent_US_7314974 AME62096.1_Sequ...  102     1e-22
+  ADS38939.1_Sequence_24_from_patent_US_7790850 AEW39459.1_Sequen...  103     1e-22
+  CAC42560.1_unnamed_protein_product_[Homo_sapiens] AAR66465.1_Se...  102     2e-22
+  AAW10855.1_Sequence_575_from_patent_US_6806054 ABJ30567.1_Seque...  102     2e-22
+  ADM03715.1_Sequence_8_from_patent_US_7728107                        103     2e-22
+  CAC42559.1_unnamed_protein_product_[Homo_sapiens] AAR66464.1_Se...  102     2e-22
+  CAC42562.1_unnamed_protein_product_[Homo_sapiens] AAR66467.1_Se...  102     2e-22
+  CAC42561.1_unnamed_protein_product_[Homo_sapiens] AAR66466.1_Se...  102     2e-22
+  ABH66163.1_Sequence_3_from_patent_US_7029878 ABW45181.1_Sequenc...  101     2e-22
+  ABW65077.1_Sequence_17_from_patent_US_7282563 ADL99439.1_Sequen...  101     2e-22
+  ABH66171.1_Sequence_11_from_patent_US_7029878                       103     2e-22
+  AAE56969.1_Sequence_18_from_patent_US_6169173 AAP00794.1_Sequen...  101     3e-22
+  ABW65081.1_Sequence_22_from_patent_US_7282563 ADL99443.1_Sequen...  101     3e-22
+  AAW10819.1_Sequence_503_from_patent_US_6806054 ABJ30531.1_Seque...  100     3e-22
+  CAA02883.1_RECEPTEUR_GALANINE_HUMAIN_[Homo_sapiens] AAE81202.1_...  100     3e-22
+  AAE50260.1_Sequence_344_from_patent_US_6114139                      100     3e-22
+  AGN58128.1_Sequence_137_from_patent_US_8455203                      100     3e-22
+  AAM60136.1_Sequence_5_from_patent_US_6399325 AGN58127.1_Sequenc...  100     3e-22
+  AKX79634.1_Sequence_615_from_patent_US_8999654                      101     3e-22
+  AKX79677.1_Sequence_658_from_patent_US_8999654                      101     3e-22
+  ABH66172.1_Sequence_12_from_patent_US_7029878                       102     4e-22
+  ABZ32047.1_Sequence_5985_from_patent_US_7314974 AME61318.1_Sequ...  101     4e-22
+  AKX79628.1_Sequence_609_from_patent_US_8999654                      102     4e-22
+  AAA94962.1_Sequence_7_from_patent_US_5474898                        102     4e-22
+  AJN70152.1_Sequence_81_from_patent_US_8901094                       103     5e-22
+  AAB78704.1_Sequence_7_from_patent_US_5658783 AAE11949.1_Sequenc...  100     5e-22
+  CAB42462.1_unnamed_protein_product_[unidentified] AAE47533.1_Se...  100     5e-22
+  AAW10833.1_Sequence_531_from_patent_US_6806054 ABJ30545.1_Seque...  100     6e-22
+  AAE75787.1_Sequence_5_from_patent_US_6258556 AAE87938.1_Sequenc...  100     6e-22
+  ACP57186.1_Sequence_1315_from_patent_US_7482117 ADS30783.1_Sequ...  100     6e-22
+  AAM58785.1_Sequence_4_from_patent_US_6383762                        101     7e-22
+  AAO31119.1_Sequence_8_from_patent_US_6331401 AHD78030.1_Sequenc...  100     8e-22
+  AAA94902.1_Sequence_11_from_patent_US_5472866 AAE75256.1_Sequen...  101     8e-22
+  AAE75261.1_Sequence_11_from_patent_US_6255089                       101     8e-22
+  AKX79854.1_Sequence_835_from_patent_US_8999654                      100     9e-22
+  AKX79678.1_Sequence_659_from_patent_US_8999654                      100     9e-22
+  ABI05743.1_Sequence_42_from_patent_US_7078187 ABI06283.1_Sequen...  99.8    9e-22
+  AAE36276.1_Sequence_8_from_patent_US_5985583 CAD69340.1_unnamed...  99.4    1e-21
+  CAB70478.1_unnamed_protein_product_[unidentified] AAO97613.1_Se...  99.8    1e-21
+  AAW10787.1_Sequence_439_from_patent_US_6806054 ABJ30499.1_Seque...  99.8    1e-21
+  AAE75263.1_Sequence_17_from_patent_US_6255089                       100     1e-21
+  AAE75262.1_Sequence_14_from_patent_US_6255089                       100     1e-21
+  AAA95158.1_Sequence_5_from_patent_US_5476782 AAE47522.1_Sequenc...  99.4    1e-21
+  AAY08095.1_Sequence_49_from_patent_US_6875570                       100     1e-21
+  CAB70479.1_unnamed_protein_product_[unidentified] AAO97601.1_Se...  99.4    1e-21
+  AAW10788.1_Sequence_441_from_patent_US_6806054 ABJ30500.1_Seque...  99.4    2e-21
+  AAB74873.1_Sequence_5_from_patent_US_5639652 AAB77380.1_Sequenc...  99.4    2e-21
+  AAW10786.1_Sequence_436_from_patent_US_6806054 ABJ30498.1_Seque...  99.4    2e-21
+  AJM06730.1_Sequence_1_from_patent_US_8748182 AJM36340.1_Sequenc...  100     2e-21
+  AAB11106.1_Sequence_43_from_patent_US_5508384                       98.6    2e-21
+  AAW10789.1_Sequence_443_from_patent_US_6806054 ABJ30501.1_Seque...  98.6    2e-21
+  AJL53161.1_Sequence_4_from_patent_US_8729040 AKW98100.1_Sequenc...  100     2e-21
+  AAE37456.1_Sequence_6_from_patent_US_5989834                        99.0    2e-21
+  AAW10790.1_Sequence_445_from_patent_US_6806054 ABJ30502.1_Seque...  99.0    2e-21
+  AAE37455.1_Sequence_4_from_patent_US_5989834 AJN70135.1_Sequenc...  99.0    2e-21
+  AAB54702.1_Sequence_6_from_patent_US_5621079 AAE38414.1_Sequenc...  98.6    2e-21
+  ABW65082.1_Sequence_23_from_patent_US_7282563 ADL99444.1_Sequen...  98.6    3e-21
+  ABN15660.1_Sequence_1_from_patent_US_7148026                        98.2    3e-21
+  AAB74876.1_Sequence_8_from_patent_US_5639652 AAB77383.1_Sequenc...  99.8    3e-21
+  AAP64832.1_Sequence_122_from_patent_US_6555339 ACH30154.1_Seque...  99.4    3e-21
+  AAP64867.1_Sequence_228_from_patent_US_6555339 ACH30189.1_Seque...  99.4    3e-21
+  ABI05735.1_Sequence_18_from_patent_US_7078187 ABI06275.1_Sequen...  98.2    3e-21
+  AAA94965.1_Sequence_10_from_patent_US_5474898                       99.0    3e-21
+  AAU51132.1_Sequence_32077_from_patent_US_6703491 AAU51425.1_Seq...  100     3e-21
+  AAE49018.1_Sequence_25_from_patent_US_6107324 AAE53519.1_Sequen...  99.4    3e-21
+  AKX31094.1_Sequence_5_from_patent_US_8980908                        96.7    4e-21
+  AJM06742.1_Sequence_13_from_patent_US_8748182                       97.4    4e-21
+  CAC42557.1_unnamed_protein_product_[Homo_sapiens] AAR66462.1_Se...  98.2    4e-21
+  AAW10785.1_Sequence_435_from_patent_US_6806054 ABJ30497.1_Seque...  99.4    4e-21
+  AAE81840.1_Sequence_4_from_patent_US_6291195 AAU96173.1_Sequenc...  97.8    4e-21
+  AJL27583.1_Sequence_112_from_patent_US_8703915                      89.7    4e-21
+  AKX79620.1_Sequence_601_from_patent_US_8999654                      98.6    5e-21
+  AAC19522.1_Sequence_2_from_patent_US_5698444 AAE10707.1_Sequenc...  99.0    5e-21
+  AQN59627.1_Sequence_8_from_patent_US_9422359                        99.4    5e-21
+  CBX47523.1_unnamed_protein_product_[Homo_sapiens] AHD70867.1_Se...  98.6    6e-21
+  AKX79182.1_Sequence_113_from_patent_US_8999654                      98.2    6e-21
+  AAE36275.1_Sequence_7_from_patent_US_5985583                        98.6    6e-21
+  AAC11672.1_Sequence_16_from_patent_US_5691155 CAN37601.1_unname...  98.6    7e-21
+  AAB15014.1_Sequence_2_from_patent_US_5545549 AAE37454.1_Sequenc...  97.4    7e-21
+  ABI05745.1_Sequence_46_from_patent_US_7078187 ABI06285.1_Sequen...  97.4    8e-21
+  ADA49954.1_Sequence_13_from_patent_US_7625869 ADS11905.1_Sequen...  97.4    9e-21
+  AAR76521.1_Sequence_2_from_patent_US_6645726                        96.7    9e-21
+  AKX31091.1_Sequence_2_from_patent_US_8980908                        95.5    1e-20
+  ABI05750.1_Sequence_56_from_patent_US_7078187 ABI06290.1_Sequen...  97.4    1e-20
+  AAW10852.1_Sequence_569_from_patent_US_6806054 ABJ30564.1_Seque...  97.1    1e-20
+  AAB80611.1_Sequence_4_from_patent_US_5610282                        97.8    1e-20
+  ABH66165.1_Sequence_5_from_patent_US_7029878                        97.4    1e-20
+  AJN70146.1_Sequence_65_from_patent_US_8901094                       96.7    1e-20
+  ABA07296.1_Sequence_2_from_patent_US_6906075 ABC03725.1_Sequenc...  96.3    1e-20
+  AAE95965.1_Sequence_2_from_patent_US_6355478 AJN70133.1_Sequenc...  96.7    1e-20
+  AAE49022.1_Sequence_33_from_patent_US_6107324 AAE53523.1_Sequen...  97.8    1e-20
+  CAD97481.1_unnamed_protein_product_[Mus_sp.] ABU39291.1_Sequenc...  96.7    1e-20
+  AJM06743.1_Sequence_14_from_patent_US_8748182                       96.3    1e-20
+  ABH66164.1_Sequence_4_from_patent_US_7029878                        96.3    1e-20
+  ABI05744.1_Sequence_44_from_patent_US_7078187 ABI06284.1_Sequen...  96.7    1e-20
+  AAE50237.1_Sequence_313_from_patent_US_6114139 AAE50275.1_Seque...  93.6    1e-20
+  AAW99682.1_Sequence_4_from_patent_US_6835546 AAW99684.1_Sequenc...  96.3    1e-20
+  ABH66174.1_Sequence_14_from_patent_US_7029878                       98.2    1e-20
+  AEC33399.1_Sequence_6_from_patent_US_7862825 AFO17671.1_Sequenc...  96.7    2e-20
+  ABJ42829.1_Sequence_18_from_patent_US_7115375 AJN70134.1_Sequen...  96.7    2e-20
+  ABI05748.1_Sequence_52_from_patent_US_7078187 ABI06288.1_Sequen...  95.9    2e-20
+  AAE03538.1_Sequence_2_from_patent_US_5866324 AAE41903.1_Sequenc...  96.3    2e-20
+  ABH66173.1_Sequence_13_from_patent_US_7029878                       97.8    2e-20
+  AJN70139.1_Sequence_45_from_patent_US_8901094                       96.3    2e-20
+  AAE47535.1_Sequence_6_from_patent_US_6096513 AAE86823.1_Sequenc...  96.3    2e-20
+  AAC30824.1_Sequence_2_from_patent_US_5723299 AAC30830.1_Sequenc...  96.3    2e-20
+  AAE49021.1_Sequence_31_from_patent_US_6107324 AAE53522.1_Sequen...  97.1    2e-20
+  AAC30825.1_Sequence_4_from_patent_US_5723299 AAA71726.1_Sequenc...  96.3    2e-20
+  AKX79614.1_Sequence_595_from_patent_US_8999654                      95.9    2e-20
+  AAE33831.1_Sequence_32_from_patent_US_5976814 ABA13012.1_Sequen...  95.5    2e-20
+  CAF33927.1_unnamed_protein_product_[Homo_sapiens] CAN37603.1_un...  97.1    2e-20
+  AME80573.1_Sequence_158_from_patent_US_9029080                      97.4    2e-20
+  AAW10838.1_Sequence_541_from_patent_US_6806054 ABJ30550.1_Seque...  95.9    2e-20
+  AAE56971.1_Sequence_20_from_patent_US_6169173 AAT21519.1_Sequen...  95.9    3e-20
+  AKX79732.1_Sequence_713_from_patent_US_8999654                      95.9    3e-20
+  AAE36274.1_Sequence_6_from_patent_US_5985583                        96.3    3e-20
+  ABJ39401.1_Sequence_87_from_patent_US_7105488                       87.4    3e-20
+  AAE72278.1_Sequence_8_from_patent_US_6235496                        95.9    3e-20
+  AAW99692.1_Sequence_24_from_patent_US_6835546 ACC34682.1_Sequen...  96.7    3e-20
+  ABI05738.1_Sequence_28_from_patent_US_7078187 ABI06278.1_Sequen...  95.9    3e-20
+  ABS90788.1_Sequence_4_from_patent_US_7198910 ABT06769.1_Sequenc...  95.9    3e-20
+  ABE24588.1_Sequence_5_from_patent_US_7018812 ABN29309.1_Sequenc...  95.5    4e-20
+  AAO31122.1_Sequence_17_from_patent_US_6331401                       96.3    4e-20
+  AAE81839.1_Sequence_2_from_patent_US_6291195 AAU96172.1_Sequenc...  95.9    4e-20
+  ABA33590.1_Sequence_9_from_patent_US_6930185 ABE19278.1_Sequenc...  95.9    4e-20
+  AAA71267.1_Sequence_22_from_patent_US_5422265 AAB46001.1_Sequen...  95.9    4e-20
+  AKX79778.1_Sequence_759_from_patent_US_8999654                      95.5    4e-20
+  CAC42586.1_unnamed_protein_product_[Caenorhabditis_elegans] AAR...  95.5    4e-20
+  AAN88881.1_Sequence_10_from_patent_US_6448011                       96.3    4e-20
+  ACC29775.1_Sequence_62_from_patent_US_7348140                       95.1    4e-20
+  ABZ31381.1_Sequence_5319_from_patent_US_7314974 AME60652.1_Sequ...  95.5    4e-20
+  ABH95114.1_Sequence_20_from_patent_US_7067113                       95.9    5e-20
+  AAM17832.1_Sequence_2_from_patent_US_6362326 AAU96178.1_Sequenc...  94.7    5e-20
+  AAB11093.1_Sequence_30_from_patent_US_5508384                       94.4    5e-20
+  AAE33830.1_Sequence_28_from_patent_US_5976814 ABA13011.1_Sequen...  94.7    5e-20
+  AAU50690.1_Sequence_6_from_patent_US_6703491                        96.3    6e-20
+  AAU96176.1_Sequence_26_from_patent_US_6723552 ACH03422.1_Sequen...  95.1    6e-20
+  ABI05736.1_Sequence_20_from_patent_US_7078187 ABI06276.1_Sequen...  94.7    6e-20
+  AAO31117.1_Sequence_4_from_patent_US_6331401                        95.1    6e-20
+  AAU96177.1_Sequence_27_from_patent_US_6723552 ACH03423.1_Sequen...  95.1    6e-20
+  ADC20434.1_Sequence_918_from_patent_US_7638288 AGD01395.1_Seque...  94.4    7e-20
+  ABI06291.1_Sequence_60_from_patent_US_7078484                       94.4    7e-20
+  ACC29780.1_Sequence_72_from_patent_US_7348140                       95.5    7e-20
+  AAW10860.1_Sequence_589_from_patent_US_6806054 ABJ30572.1_Seque...  96.3    7e-20
+  ABI05746.1_Sequence_48_from_patent_US_7078187 ABI06286.1_Sequen...  94.4    7e-20
+  AAS31659.1_Sequence_3_from_patent_US_6682908 AKX79190.1_Sequenc...  94.4    7e-20
+  AAE42133.1_Sequence_2_from_patent_US_6008012                        94.7    7e-20
+  CAC42568.1_unnamed_protein_product_[Homo_sapiens] AAR66473.1_Se...  95.1    7e-20
+  ABH95112.1_Sequence_16_from_patent_US_7067113                       95.1    8e-20
+  ADM03716.1_Sequence_10_from_patent_US_7728107                       95.1    8e-20
+  AAA94897.1_Sequence_2_from_patent_US_5472866 AAO31116.1_Sequenc...  94.7    8e-20
+  AAP64815.1_Sequence_52_from_patent_US_6555339 ACH30137.1_Sequen...  94.7    8e-20
+  AAO99062.1_Sequence_2_from_patent_US_6511827                        94.4    8e-20
+  AAW10761.1_Sequence_351_from_patent_US_6806054 ABJ30473.1_Seque...  94.0    9e-20
+  AAB56842.1_Sequence_23_from_patent_US_5599671 AAE11425.1_Sequen...  93.6    9e-20
+  AAW10762.1_Sequence_355_from_patent_US_6806054 ABJ30474.1_Seque...  94.0    1e-19
+  AAC30827.1_Sequence_8_from_patent_US_5723299 AAA71728.1_Sequenc...  94.0    1e-19
+  AKX79289.1_Sequence_269_from_patent_US_8999654                      95.1    1e-19
+  AAB76650.1_Sequence_23_from_patent_US_5646156                       93.2    1e-19
+  AAP64858.1_Sequence_210_from_patent_US_6555339 ACH30180.1_Seque...  94.0    1e-19
+  ACQ18392.1_Sequence_306_from_patent_US_7510850                      94.0    1e-19
+  AQM99213.1_Sequence_4_from_patent_US_9364494                        93.6    1e-19
+  ABJ39565.1_Sequence_251_from_patent_US_7105488                      85.5    1e-19
+  AAR76524.1_Sequence_7_from_patent_US_6645726 AAS31662.1_Sequenc...  93.6    1e-19
+  AAB78701.1_Sequence_4_from_patent_US_5658783 AAE11946.1_Sequenc...  94.0    1e-19
+  AAW10771.1_Sequence_391_from_patent_US_6806054 ABJ30483.1_Seque...  93.6    1e-19
+  ABH95120.1_Sequence_32_from_patent_US_7067113                       94.7    1e-19
+  ACC29754.1_Sequence_20_from_patent_US_7348140                       94.4    1e-19
+  AAE73297.1_Sequence_16_from_patent_US_6242199 AAR76523.1_Sequen...  93.6    1e-19
+  AJN70138.1_Sequence_42_from_patent_US_8901094                       93.6    1e-19
+  AAP64849.1_Sequence_192_from_patent_US_6555339 ACH30171.1_Seque...  94.0    1e-19
+  ACC29755.1_Sequence_24_from_patent_US_7348140 AFX56976.1_Sequen...  94.0    1e-19
+  AAE73290.1_Sequence_3_from_patent_US_6242199                        93.2    2e-19
+  AAA94898.1_Sequence_4_from_patent_US_5472866                        94.0    2e-19
+  AKX79567.1_Sequence_548_from_patent_US_8999654                      94.0    2e-19
+  AKX79184.1_Sequence_116_from_patent_US_8999654                      94.4    2e-19
+  ADS88058.1_Sequence_2_from_patent_US_7824866                        94.0    2e-19
+  AHD71412.1_Sequence_6106_from_patent_US_8586006                     94.0    2e-19
+  AKX79858.1_Sequence_1485_from_patent_US_8999654                     93.2    2e-19
+  AKX79863.1_Sequence_1495_from_patent_US_8999654                     93.2    2e-19
+  AAU97547.1_Sequence_127_from_patent_US_6727066                      92.8    2e-19
+  ACC29752.1_Sequence_18_from_patent_US_7348140                       94.0    2e-19
+  ACC29751.1_Sequence_17_from_patent_US_7348140                       94.0    2e-19
+  AAA71266.1_Sequence_21_from_patent_US_5422265 AAB46000.1_Sequen...  94.0    2e-19
+  AAB80614.1_Sequence_7_from_patent_US_5610282                        94.4    2e-19
+  AAB11095.1_Sequence_32_from_patent_US_5508384                       93.2    2e-19
+  ABH95105.1_Sequence_2_from_patent_US_7067113                        94.0    2e-19
+  AAE73293.1_Sequence_8_from_patent_US_6242199                        92.8    2e-19
+  AAE02678.1_Sequence_22_from_patent_US_5861309 AAE44742.1_Sequen...  94.4    2e-19
+  ABI05747.1_Sequence_50_from_patent_US_7078187 ABI06287.1_Sequen...  92.8    2e-19
+  AKX79198.1_Sequence_137_from_patent_US_8999654                      93.6    2e-19
+  CAC42609.1_unnamed_protein_product_[Homo_sapiens] AAE73296.1_Se...  92.8    2e-19
+  ACC29766.1_Sequence_44_from_patent_US_7348140                       92.8    2e-19
+  AAE36279.1_Sequence_14_from_patent_US_5985585 AAE44946.1_Sequen...  92.8    3e-19
+  AAE41210.1_Sequence_12_from_patent_US_6001970                       93.2    3e-19
+  AAE02677.1_Sequence_21_from_patent_US_5861309 AAE44741.1_Sequen...  94.0    3e-19
+  ACC29757.1_Sequence_26_from_patent_US_7348140                       93.2    3e-19
+  AJN70173.1_Sequence_137_from_patent_US_8901094                      92.4    3e-19
+  ACC29756.1_Sequence_25_from_patent_US_7348140                       93.2    3e-19
+  ABZ12258.1_Sequence_159_from_patent_US_7309576 AFX17705.1_Seque...  93.6    3e-19
+  ACC29772.1_Sequence_56_from_patent_US_7348140                       92.8    3e-19
+  ABE24586.1_Sequence_3_from_patent_US_7018812 ABN29307.1_Sequenc...  92.4    4e-19
+  AAW10769.1_Sequence_383_from_patent_US_6806054 ABJ30481.1_Seque...  92.0    4e-19
+  AEU85200.1_Sequence_144319_from_patent_US_8067671 AEY28360.1_Se...  92.8    4e-19
+  AAW10770.1_Sequence_387_from_patent_US_6806054 ABJ30482.1_Seque...  92.0    4e-19
+  ACC29774.1_Sequence_61_from_patent_US_7348140                       92.4    4e-19
+  ABE24587.1_Sequence_4_from_patent_US_7018812 ABN29308.1_Sequenc...  92.4    4e-19
+  AAW10782.1_Sequence_429_from_patent_US_6806054 ABJ30494.1_Seque...  92.0    5e-19
+  AAE68752.1_Sequence_2_from_patent_US_6225080                        92.0    5e-19
+  AAE03539.1_Sequence_3_from_patent_US_5866324 AAE41904.1_Sequenc...  92.4    5e-19
+  ACC29764.1_Sequence_42_from_patent_US_7348140                       92.0    5e-19
+  AAN88880.1_Sequence_9_from_patent_US_6448011                        93.2    5e-19
+  AKX79500.1_Sequence_481_from_patent_US_8999654                      92.4    5e-19
+  AAO96294.1_Sequence_25_from_patent_US_6500927                       92.0    5e-19
+  ABL20574.1_Sequence_12_from_patent_US_7125660                       92.4    5e-19
+  AAO96289.1_Sequence_20_from_patent_US_6500927                       92.4    5e-19
+  AAE36280.1_Sequence_15_from_patent_US_5985585 AAE44947.1_Sequen...  92.0    5e-19
+  AAO96295.1_Sequence_26_from_patent_US_6500927                       92.0    6e-19
+  AKX64078.1_Sequence_15_from_patent_US_8993263                       92.4    6e-19
+  AAE75785.1_Sequence_3_from_patent_US_6258556 AAE87936.1_Sequenc...  92.0    6e-19
+  AKX79301.1_Sequence_281_from_patent_US_8999654                      92.4    6e-19
+  AAO96297.1_Sequence_28_from_patent_US_6500927                       92.4    6e-19
+  AAB80612.1_Sequence_5_from_patent_US_5610282 AAE10698.1_Sequenc...  92.4    6e-19
+  AAO96286.1_Sequence_17_from_patent_US_6500927                       92.4    6e-19
+  AAO96288.1_Sequence_19_from_patent_US_6500927                       92.0    6e-19
+  ABC03445.1_Sequence_2_from_patent_US_6953673                        92.4    6e-19
+  ACM82703.1_Sequence_8201_from_patent_US_6812339                     91.7    6e-19
+  AAO96298.1_Sequence_29_from_patent_US_6500927 AKX79710.1_Sequen...  92.0    6e-19
+  ACW55985.1_Sequence_55_from_patent_US_7585941                       92.0    6e-19
+  AAP00870.1_Sequence_9_from_patent_US_6518480                        92.4    6e-19
+  ACW56001.1_Sequence_82_from_patent_US_7585941                       92.4    6e-19
+  ACW56002.1_Sequence_84_from_patent_US_7585941                       92.8    6e-19
+  AAN95217.1_Sequence_4_from_patent_US_6468767 ABA38410.1_Sequenc...  92.4    6e-19
+  ACW56003.1_Sequence_86_from_patent_US_7585941                       92.0    7e-19
+  AAA94964.1_Sequence_9_from_patent_US_5474898                        92.0    7e-19
+  ACW55993.1_Sequence_66_from_patent_US_7585941                       92.0    7e-19
+  AAN27279.1_Sequence_15_from_patent_US_6440670                       91.7    7e-19
+  AAB78702.1_Sequence_5_from_patent_US_5658783 AAE11947.1_Sequenc...  92.0    7e-19
+  CAB42460.1_unnamed_protein_product_[unidentified] AAR67195.1_Se...  92.0    7e-19
+  AAE91743.1_Sequence_17_from_patent_US_6346380 AAN27278.1_Sequen...  91.3    7e-19
+  ACW55990.1_Sequence_63_from_patent_US_7585941                       92.0    7e-19
+  ABJ30025.1_Sequence_11_from_patent_US_7094892 ABX94209.1_Sequen...  92.0    7e-19
+  ACW55983.1_Sequence_51_from_patent_US_7585941                       92.0    7e-19
+  AAE10699.1_Sequence_13_from_patent_US_5817477 AAE10703.1_Sequen...  91.3    7e-19
+  AAE75265.1_Sequence_23_from_patent_US_6255089                       92.4    7e-19
+  AAE47991.1_Sequence_8_from_patent_US_6103492 ABJ30654.1_Sequenc...  92.0    7e-19
+  AAA94968.1_Sequence_13_from_patent_US_5474898                       92.4    7e-19
+  AAE75784.1_Sequence_2_from_patent_US_6258556                        92.0    7e-19
+  ACW55987.1_Sequence_59_from_patent_US_7585941                       92.0    7e-19
+  ACW55988.1_Sequence_61_from_patent_US_7585941                       92.0    8e-19
+  AAO96296.1_Sequence_27_from_patent_US_6500927                       92.0    8e-19
+  ADF20581.1_Sequence_11_from_patent_US_7671176                       92.0    8e-19
+  AAA94961.1_Sequence_6_from_patent_US_5474898                        92.4    8e-19
+  AAW05569.1_Sequence_2_from_patent_US_6797472                        92.0    8e-19
+  ABJ30024.1_Sequence_9_from_patent_US_7094892 ABX94208.1_Sequenc...  92.0    8e-19
+  AAW10811.1_Sequence_487_from_patent_US_6806054 ABJ30523.1_Seque...  92.0    9e-19
+  AAE87935.1_Sequence_2_from_patent_US_6335168 AAE88506.1_Sequenc...  91.7    9e-19
+  ACW55986.1_Sequence_57_from_patent_US_7585941                       91.7    9e-19
+  ACW55984.1_Sequence_53_from_patent_US_7585941 AKW90917.1_Sequen...  91.7    9e-19
+  AAW10781.1_Sequence_427_from_patent_US_6806054 ABJ30493.1_Seque...  91.7    9e-19
+  ADF20580.1_Sequence_9_from_patent_US_7671176                        91.7    9e-19
+  ABH95119.1_Sequence_30_from_patent_US_7067113                       92.0    9e-19
+  ACW55991.1_Sequence_64_from_patent_US_7585941                       91.7    1e-18
+  ACW55992.1_Sequence_65_from_patent_US_7585941                       92.0    1e-18
+  ABH99710.1_Sequence_6_from_patent_US_7071315                        91.7    1e-18
+  ABN29295.1_Sequence_41_from_patent_US_7163800 ABW61199.1_Sequen...  92.4    1e-18
+  ABH99711.1_Sequence_10_from_patent_US_7071315                       91.3    1e-18
+  ABN29297.1_Sequence_43_from_patent_US_7163800 ABW61201.1_Sequen...  92.0    1e-18
+  ABH99709.1_Sequence_4_from_patent_US_7071315                        91.3    1e-18
+  ABW65079.1_Sequence_20_from_patent_US_7282563 ADL99441.1_Sequen...  91.7    1e-18
+  CBJ06581.1_unnamed_protein_product_[synthetic_construct]            92.8    1e-18
+  ABH95115.1_Sequence_22_from_patent_US_7067113                       91.7    1e-18
+  AAW10840.1_Sequence_545_from_patent_US_6806054 ABJ30552.1_Seque...  91.3    1e-18
+  CBJ06589.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AAT18073.1_Sequence_1_from_patent_US_6699965 ABZ24449.1_Sequenc...  91.3    1e-18
+  CBJ06580.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AAE75258.1_Sequence_5_from_patent_US_6255089                        92.0    1e-18
+  AAC11673.1_Sequence_17_from_patent_US_5691155                       91.3    1e-18
+  ABN29298.1_Sequence_44_from_patent_US_7163800 ABW61202.1_Sequen...  92.0    1e-18
+  CBJ06579.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  CBJ06587.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AAB75422.1_Sequence_11_from_patent_US_5641650                       91.7    1e-18
+  CBJ06578.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AAE67325.1_Sequence_3_from_patent_US_6210967                        90.9    1e-18
+  AAW10841.1_Sequence_547_from_patent_US_6806054 ABJ30553.1_Seque...  90.9    1e-18
+  ABP12364.1_Sequence_292_from_patent_US_7183105 AED03616.1_Seque...  91.3    1e-18
+  AAB74872.1_Sequence_4_from_patent_US_5639652 AAB77379.1_Sequenc...  91.7    1e-18
+  CBJ06588.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AAW10767.1_Sequence_375_from_patent_US_6806054 ABJ30479.1_Seque...  90.5    1e-18
+  ADF20579.1_Sequence_7_from_patent_US_7671176                        91.7    1e-18
+  CBJ06586.1_unnamed_protein_product_[synthetic_construct]            92.4    1e-18
+  AKX31090.1_Sequence_1_from_patent_US_8980908                        89.4    1e-18
+  AAE75264.1_Sequence_20_from_patent_US_6255089                       91.7    1e-18
+  AAC29621.1_Sequence_4_from_patent_US_5714381 AAB16002.1_Sequenc...  91.7    1e-18
+  ABJ30023.1_Sequence_7_from_patent_US_7094892 ABX94207.1_Sequenc...  91.7    1e-18
+  AAB80609.1_Sequence_2_from_patent_US_5610282                        91.7    1e-18
+  CAD79724.1_unnamed_protein_product_[Homo_sapiens]                   90.1    1e-18
+  AOC26637.1_Sequence_8508_from_patent_US_9149506 AOG86607.1_Sequ...  90.5    1e-18
+  CBJ06630.1_unnamed_protein_product_[synthetic_construct]            92.0    1e-18
+  CBJ06583.1_unnamed_protein_product_[synthetic_construct]            92.0    2e-18
+  ABH81897.1_Sequence_47_from_patent_US_7045299 ACJ98029.1_Sequen...  91.3    2e-18
+  AJN70155.1_Sequence_89_from_patent_US_8901094                       88.2    2e-18
+
+
+> AAE38413.1_Sequence_3_from_patent_US_5994097 AAE56973.1_Sequence_23_from_patent_US_6169173
+AAT21521.1_Sequence_23_from_patent_US_6706493
+Length=430
+
+ Score = 820 bits (2119),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 400/400 (100%), Positives = 400/400 (100%), Gaps = 0/400 (0%)
+
+Query  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+            MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT
+Sbjct  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+
+Query  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+            LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF
+Sbjct  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+
+Query  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+            MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS
+Sbjct  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+
+Query  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+            NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI
+Sbjct  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+
+Query  241  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  300
+            KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS
+Sbjct  241  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  300
+
+Query  301  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  360
+            SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL
+Sbjct  301  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  360
+
+Query  361  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  400
+            SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG
+Sbjct  361  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  400
+
+
+> AAE56974.1_Sequence_24_from_patent_US_6169173 AAT21522.1_Sequence_24_from_patent_US_6706493
+Length=450
+
+ Score = 820 bits (2118),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 400/400 (100%), Positives = 400/400 (100%), Gaps = 0/400 (0%)
+
+Query  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+            MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT
+Sbjct  21   MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  80
+
+Query  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+            LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF
+Sbjct  81   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  140
+
+Query  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+            MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS
+Sbjct  141  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  200
+
+Query  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+            NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI
+Sbjct  201  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  260
+
+Query  241  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  300
+            KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS
+Sbjct  261  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  320
+
+Query  301  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  360
+            SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL
+Sbjct  321  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  380
+
+Query  361  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  400
+            SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG
+Sbjct  381  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  420
+
+
+> AAC87330.1_Sequence_5_from_patent_US_5750353 AAE56978.1_Sequence_31_from_patent_US_6169173
+AAQ31658.1_Sequence_5_from_patent_US_6566080
+AAQ78738.1_Sequence_5_from_patent_US_6376198
+AAT21526.1_Sequence_31_from_patent_US_6706493 ABW44246.1_Sequence_6_from_patent_US_7258971
+ACS10646.1_Sequence_11_from_patent_US_7541151
+AJN14502.1_Sequence_30_from_patent_US_8843356
+AKX79336.1_Sequence_316_from_patent_US_8999654
+Length=428
+
+ Score = 711 bits (1836),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 361/387 (93%), Positives = 368/387 (95%), Gaps = 2/387 (1%)
+
+Query  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+            MDVVDSL VNGSNIT  CELG ENETLFCLD+PRPSKEWQPAVQILLYSLIFLLSVLGNT
+Sbjct  1    MDVVDSLLVNGSNITPPCELGLENETLFCLDQPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+
+Query  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+            LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIP+LLKDFIFGSAVCKTTTYF
+Sbjct  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPNLLKDFIFGSAVCKTTTYF  120
+
+Query  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+            MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS
+Sbjct  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+
+Query  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+            NLVPFTKNNNQT NMCRFLLPNDVMQQ+WHTFLLLILFLIPGIVMMVAYGLISLELYQGI
+Sbjct  181  NLVPFTKNNNQTANMCRFLLPNDVMQQSWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+
+Query  241  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  300
+            KF+A QKKSAKERK ST SSG  EDSDGCYLQK+R PRKLELRQLS  S  S+R NRIRS
+Sbjct  241  KFEASQKKSAKERKPSTTSSGKYEDSDGCYLQKTRPPRKLELRQLSTGS--SSRANRIRS  298
+
+Query  301  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  360
+            +SS ANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDT SAER LSGTPISFILLL
+Sbjct  299  NSSAANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTASAERRLSGTPISFILLL  358
+
+Query  361  SYTSSCVNPIIYCFMNKRFRLGFMATF  387
+            SYTSSCVNPIIYCFMNKRFRLGFMATF
+Sbjct  359  SYTSSCVNPIIYCFMNKRFRLGFMATF  385
+
+
+> AKX79337.1_Sequence_317_from_patent_US_8999654
+Length=436
+
+ Score = 707 bits (1824),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 361/407 (89%), Positives = 375/407 (92%), Gaps = 8/407 (2%)
+
+Query  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+            MDVVDSL +NGSNIT  CELG ENETLFCLD+P+PSKEWQ AVQILLYS IFLLSVLGNT
+Sbjct  1    MDVVDSLLMNGSNITPPCELGLENETLFCLDQPQPSKEWQSAVQILLYSFIFLLSVLGNT  60
+
+Query  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+            LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIP+LLKDFIFGSAVCKTTTYF
+Sbjct  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPNLLKDFIFGSAVCKTTTYF  120
+
+Query  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+            MGTSVSVSTFNLVAISLERYGAIC+PLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS
+Sbjct  121  MGTSVSVSTFNLVAISLERYGAICRPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+
+Query  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+            NLVPFTKNNNQT NMCRFLLP+D MQQ+W TFLLLILFLIPG+VM+VAYGLISLELYQGI
+Sbjct  181  NLVPFTKNNNQTANMCRFLLPSDAMQQSWQTFLLLILFLIPGVVMVVAYGLISLELYQGI  240
+
+Query  241  KFDAIQKKSAKERK-------TSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSN  293
+            KFDA QKKSAKE++           SS   EDSDGCYLQKSR PRKLEL+QLS SSSG
+Sbjct  241  KFDASQKKSAKEKRLSSGGGGGGGSSSSRYEDSDGCYLQKSRPPRKLELQQLSTSSSG-G  299
+
+Query  294  RINRIRSSSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTP  353
+            RINRIRSS S ANL+AKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAE+HLSGTP
+Sbjct  300  RINRIRSSGSAANLIAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAEKHLSGTP  359
+
+Query  354  ISFILLLSYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  400
+            ISFILLLSYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPG  GVRG
+Sbjct  360  ISFILLLSYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGPTGVRG  406
+
+
+> AAE56966.1_Sequence_14_from_patent_US_6169173 AAT21514.1_Sequence_14_from_patent_US_6706493
+Length=444
+
+ Score = 701 bits (1808),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 364/400 (91%), Positives = 381/400 (95%), Gaps = 1/400 (0%)
+
+Query  1    MDVVDSLFVNGSNITSACELGFENETLFCLDRPRPSKEWQPAVQILLYSLIFLLSVLGNT  60
+            MDVVDSL +NGSNIT  CELG ENETLFCLD+P+PSKEWQ A+QILLYS+IFLLSVLGNT
+Sbjct  16   MDVVDSLLMNGSNITPPCELGLENETLFCLDQPQPSKEWQSALQILLYSIIFLLSVLGNT  75
+
+Query  61   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPSLLKDFIFGSAVCKTTTYF  120
+            LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIP+LLKDFIFGSAVCKTTTYF
+Sbjct  76   LVITVLIRNKRMRTVTNIFLLSLAVSDLMLCLFCMPFNLIPNLLKDFIFGSAVCKTTTYF  135
+
+Query  121  MGTSVSVSTFNLVAISLERYGAICKPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  180
+            MGTSVSVSTFNLVAISLERYGAIC+PLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS
+Sbjct  136  MGTSVSVSTFNLVAISLERYGAICRPLQSRVWQTKSHALKVIAATWCLSFTIMTPYPIYS  195
+
+Query  181  NLVPFTKNNNQTGNMCRFLLPNDVMQQTWHTFLLLILFLIPGIVMMVAYGLISLELYQGI  240
+            NLVPFTKNNNQT NMCRFLLP+D MQQ+W TFLLLILFL+PGIVM+VAYGLISLELYQGI
+Sbjct  196  NLVPFTKNNNQTANMCRFLLPSDAMQQSWQTFLLLILFLLPGIVMVVAYGLISLELYQGI  255
+
+Query  241  KFDAIQKKSAKERKTSTGSSGPMEDSDGCYLQKSRHPRKLELRQLSPSSSGSNRINRIRS  300
+            KFDA QKKSAKE+K STGSS   EDSDGCYLQKSR PRKLEL+QLS S SG +R+NRIRS
+Sbjct  256  KFDASQKKSAKEKKPSTGSSTRYEDSDGCYLQKSRPPRKLELQQLS-SGSGGSRLNRIRS  314
+
+Query  301  SSSTANLMAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAERHLSGTPISFILLL  360
+            SSS ANL+AKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAE+HLSGTPISFILLL
+Sbjct  315  SSSAANLIAKKRVIRMLIVIVVLFFLCWMPIFSANAWRAYDTVSAEKHLSGTPISFILLL  374
+
+Query  361  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGTPGVRG  400
+            SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPG PGVRG
+Sbjct  375  SYTSSCVNPIIYCFMNKRFRLGFMATFPCCPNPGPPGVRG  414
+
+
+
+Lambda      K        H        a         alpha
+   0.327    0.138    0.426    0.792     4.96
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6
+
+Effective search space used: 42403628628
+
+
+  Database: out.fa
+    Posted date:  Sep 25, 2017  4:45 PM
+  Number of letters in database: 400,582,099
+  Number of sequences in database:  2,054,527
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
