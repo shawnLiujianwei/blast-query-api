@@ -7,7 +7,7 @@ const CP = Promise.promisifyAll(require('child_process'));
 const logger = require('./getLogger')('blastjs.js');
 const getRedisCache = require('./getRedisCache');
 const os = require('os');
-
+const parseFmt0 = require('./formatOut0');
 let redisCache = null;
 const blast = {
     stringOutput: false
@@ -40,11 +40,11 @@ const _blaster = async (type, db, query, limit, noCache) => {
         const outFile = '/tmp/' + UUID() + '.out';
         let blastCommand = type + ' -query ' + pathW + ' -out ' + outFile + ' -db ' + db;
         //const columns = ['qseqid', 'sseqid', 'evalue', 'bitscore'];
-        const columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
-        if (!blast.stringOutput) {
-            blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
-        }
-        blastCommand += ` -max_target_seqs ${limit || 10}`;
+        // const columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
+        // if (!blast.stringOutput) {
+        //     blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
+        // }
+        // blastCommand += ` -max_target_seqs ${limit || 10}`;
         blastCommand += ` -num_threads ${os.cpus().length - 1}`;
         logger.info('RUNNING', blastCommand);
         if (null === redisCache) {
@@ -57,14 +57,15 @@ const _blaster = async (type, db, query, limit, noCache) => {
         if (!resultData) {
             await CP.execAsync(blastCommand);
             resultData = await fs.readFileAsync(outFile, 'utf8');
+            resultData = await parseFmt0(outFile);
             await redisCache.setItem(cacheKey, resultData, 1800);// cache 3 minutes
             logger.info(resultData);
         } else {
             logger.warn(`Using cache for command result`);
         }
-        if (!blast.stringOutput) {
-            return _parseFmt6(resultData, columns);
-        }
+        // if (!blast.stringOutput) {
+        //     return _parseFmt6(resultData, columns);
+        // }
         return resultData;
     } catch (err) {
         logger.error(err);
