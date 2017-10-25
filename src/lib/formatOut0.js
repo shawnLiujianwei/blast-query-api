@@ -7,7 +7,7 @@ const readline = require('readline');
 const Promise = require('bluebird');
 
 const Sequence = function (fastaHeader) {
-    this.fastaHeader = fastaHeader.replace('>', '').replace(/\1/g, '$').trim();
+    this.fastaHeader = fastaHeader.replace('>', '').replace(/\1/g, '~').trim();
     this.subjects = [];
     this.attributes = [];
     this._fns = {
