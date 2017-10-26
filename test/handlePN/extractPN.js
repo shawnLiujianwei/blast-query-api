@@ -3,7 +3,7 @@
  */
 const readline = require('readline');
 const fs = require('fs');
-const getRedis = require('../src/lib/getRedis');
+const getRedis = require('../../src/lib/getRedis');
 const _ = require('lodash');
 
 const RedisQueue = function (client) {
@@ -16,9 +16,8 @@ RedisQueue.prototype.add = async function (job) {
     if (self.jobs.length > 100) {
         const toExecArray = self.jobs.splice(0, 100).map(t => [t, t]);
         await self.client.hmsetAsync(self.key, _.flatten(toExecArray));
-    } else {
-        Array.prototype.push.apply(self.jobs, job);
     }
+    Array.prototype.push.apply(self.jobs, job);
 }
 
 RedisQueue.prototype.clean = async function () {
@@ -45,7 +44,7 @@ const redisToFile = async (redisQueue) => {
     }
     const allKeys = await redisQueue.getAll();
     console.log(allKeys);
-    fs.writeFileSync('./pn.txt',JSON.stringify(allKeys));
+    fs.writeFileSync('./pn.txt', JSON.stringify(allKeys));
     process.exit(1);
 }
 
