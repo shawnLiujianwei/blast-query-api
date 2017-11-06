@@ -79,32 +79,50 @@ const read = async (filePath) => {
     return new Promise((resolve, reject) => {
 
         const resultList = [];
-        let whetherStart = false;
 
         const linereader = readline.createInterface({
             input: fs.createReadStream(filePath)
         });
 
-        let notFirst = false;
+        let sequenceCount = 0;
         let subjectStart = false;
         let sequenceObj = null;
         let subjectQueryArray = [];
-        linereader.on('line', line => {
-            line = line.trim();
+        let fastaHeader = '';
+        let beginParseHeader = false;
+        let foundFirstElement = false;
+        linereader.on('line', originalLine => {
+            const line = originalLine.trim();
             if (!line) {
                 return;
             }
-            // when find the first > , begin to parse the data
-            whetherStart = whetherStart || line.charAt(0) === '>';
-            if (whetherStart) {
-                if (line.charAt(0) === '>') {
-                    if (notFirst) {
-                        //get the full data of one result and push to array
-                        resultList.push(sequenceObj.calculate());
+            if (line.indexOf('AAE38413') !== -1) {
+                console.log(line);
+            }
+            foundFirstElement = foundFirstElement || line.charAt(0) === '>';
+            if (foundFirstElement) {
+                // when find the first > , begin to parse the data
+                beginParseHeader = beginParseHeader || line.charAt(0) === '>';
+                if (line.charAt(0) === '>' && sequenceCount > 0) {
+                    resultList.push(sequenceObj.calculate());
+                }
+                if (beginParseHeader && !line.startsWith('Length')) {
+
+                    if (fastaHeader) {
+                        fastaHeader += '~' + line;
+                    } else {
+                        fastaHeader += line;
                     }
-                    sequenceObj = new Sequence(line);
-                    notFirst = true;
-                } else if (line.startsWith('Length')) {
+                }
+                if (line.startsWith('Length')) {
+                    if (fastaHeader.indexOf('AAE56966') !== -1) {
+                        console.log(1)
+                    }
+                    beginParseHeader = false;
+                    // 当匹配到Length 开头的时候，说明fasta header 解析完,然后开始解析length
+                    sequenceObj = new Sequence(fastaHeader);
+                    fastaHeader = '';
+                    sequenceCount++;
                     sequenceObj.setLength(line.replace('Length=', ''));
                 } else if (line.startsWith('Score') || line.startsWith('Identities')) {
                     sequenceObj.addAttribute(line);
@@ -124,6 +142,9 @@ const read = async (filePath) => {
         });
 
         linereader.on('close', (err, data) => {
+            if (sequenceObj) {
+                resultList.push(sequenceObj.calculate());
+            }
             resolve(resultList);
         });
     });
