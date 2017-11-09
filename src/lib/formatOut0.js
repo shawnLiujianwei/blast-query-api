@@ -7,7 +7,7 @@ const readline = require('readline');
 const Promise = require('bluebird');
 
 const Sequence = function (fastaHeader) {
-    this.fastaHeader = fastaHeader.replace('>', '').replace(/\1/g, '~').trim();
+    this.fastaHeader = fastaHeader.replace('>', '').replace(/\r\n/g, '~').trim();
     this.subjects = [];
     this.attributes = [];
     this._fns = {
@@ -104,6 +104,12 @@ const read = async (filePath) => {
                 // when find the first > , begin to parse the data
                 beginParseHeader = beginParseHeader || line.charAt(0) === '>';
                 if (line.charAt(0) === '>' && sequenceCount > 0) {
+                    //如果开始解析下一个Sequence， 并且 Query-Subject 数组不为空， 要先加进去，否则当 只有一对 Query-Subject 的时候会被忽略掉
+                    if (subjectQueryArray.length) {
+                        sequenceObj.addQuerySubject(subjectQueryArray);
+                        subjectQueryArray = [];
+                    }
+                    subjectStart = false;
                     resultList.push(sequenceObj.calculate());
                 }
                 if (beginParseHeader && !line.startsWith('Length')) {
@@ -129,6 +135,7 @@ const read = async (filePath) => {
                 } else {
                     subjectStart = subjectStart || line.startsWith('Query');
                     if (subjectStart) {
+                        // 到找到下个Query-Subject的时候，把当前的加入到Sequence Object 里
                         if (line.startsWith('Query')) {
                             if (subjectQueryArray.length) {
                                 sequenceObj.addQuerySubject(subjectQueryArray);

@@ -4,3 +4,4 @@ node_modules
 blast.tar
 *.fasta
 test/*.txt
+build/
