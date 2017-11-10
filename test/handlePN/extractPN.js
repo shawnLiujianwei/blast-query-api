@@ -61,6 +61,7 @@ const _parse = (array) => {
 }
 
 const startRead = async (filePath) => {
+    process.env.redisHost = "localhost";
     const redis = await getRedis();
     const redisQueue = new RedisQueue(redis);
     await redisQueue.clean();
@@ -93,7 +94,7 @@ const startRead = async (filePath) => {
 
 
 (async () => {
-    const file = './out.fasta';
-    // startRead(file);
-    await redisToFile();
+    const file = '/Users/shawn-liu/work/patsnap/patnt/patnt';
+    startRead(file);
+    // await redisToFile();
 })();

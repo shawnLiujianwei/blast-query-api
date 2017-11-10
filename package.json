@@ -17,6 +17,7 @@
   "author": "PatSnap LifeScience",
   "license": "ISC",
   "dependencies": {
+    "bionode-seq": "^0.1.1",
     "bluebird": "^3.5.0",
     "body-parser": "^1.18.1",
     "crypto-sha1": "^0.1.0",

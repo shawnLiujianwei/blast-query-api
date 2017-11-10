@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.get('/dbs', API.getDBs);
 app.post('/blast/nucleotide', API.queryNucleotide);
 app.post('/blast/protein', API.queryProtein);
+app.post('/blast/sequence', API.sequenceQuery);
 
 app.listen(3000, () => {
     logger.info('Example app listening on port 3000!');
