@@ -1,5 +1,8 @@
 /**
  * Created by shawn-liu on 17/9/22.
+ * @module ApiController
+ * @requires BlastCommand
+ * @author Liu Jianwei
  */
 const blast = require('../lib/blastjs');
 const listDB = require('../lib/listDB');
@@ -9,7 +12,14 @@ const dbRoot = process.env.BLASTDB;
 const bionode = require('bionode-seq');
 const filterRequests = require('../lib/filterResults');
 
-api.getDBs = async (req, res) => {
+/**
+ * @summary list all blast database
+ * @description detect the database type by checking its file suffix
+ * @param req
+ * @param res
+ * @returns {Promise.<void>}
+ */
+exports.getDBs = async (req, res) => {
     try {
         const dbs = await listDB();
         res.json(dbs);
@@ -26,18 +36,36 @@ const _validatePost = (req, dbs) => {
         throw new Error('query can not be empty');
     }
     if (!dbs || dbs.length === 0) {
-        throw new Error('the specific db doesn\'t exist');
+        throw new Error('there is no database files');
     }
 }
 
+/**
+ *
+ * @param dbs
+ * @param command
+ * @param query
+ * @param {object}requestQuery
+ * @param {string=} requestQuery.noCache
+ * @param {string=} requestQuery.limit
+ * @param {string=} requestQuery.outfmt
+ * @param {string=} requestQuery.similarity
+ * @returns {Promise.<Array>}
+ * @private
+ */
 const _execQuery = async (dbs, command, query, requestQuery) => {
     const dbCount = dbs.length;
     let results = [];
     let error = null;
     for (let i = 0; i < dbCount; i++) {
         try {
-            const temp = await blast[command](dbs[i], query, requestQuery.limit, requestQuery.noCache);
-            Array.prototype.push.apply(results, temp);
+            const temp = await blast[command](dbs[i], query, requestQuery.limit, requestQuery.noCache, requestQuery.outfmt);
+            if (Array.isArray(temp)) {
+                Array.prototype.push.apply(results, temp);
+            } else {
+                results.push(temp);
+            }
+
         } catch (err) {
             error = err;
             logger.error(err);
@@ -51,7 +79,16 @@ const _execQuery = async (dbs, command, query, requestQuery) => {
     }
     return results;
 };
-api.queryProtein = async (req, res) => {
+
+/**
+ * @summary query protein
+ * @description first will get all protein database and exec query on each db , and them combine the results
+ * @param req
+ * @param res
+ * @see {@link module:BlastCommand.blastP}
+ * @returns {Promise.<void>}
+ */
+exports.queryProtein = async (req, res) => {
     try {
         const sequence = req.body.sequence;
         const sequenceType = bionode.checkType(sequence);
@@ -76,7 +113,15 @@ api.queryProtein = async (req, res) => {
     }
 }
 
-api.queryNucleotide = async (req, res) => {
+/**
+ * @summary query nucleotide
+ * @description first will get all nucleotide database and exec query on each db , and them combine the results
+ * @param req
+ * @param res
+ * @see {@link module:BlastCommand.blastN}
+ * @returns {Promise.<void>}
+ */
+exports.queryNucleotide = async (req, res) => {
     try {
         const sequence = req.body.sequence;
         const sequenceType = bionode.checkType(sequence);
@@ -101,49 +146,17 @@ api.queryNucleotide = async (req, res) => {
     }
 }
 
-api.sequenceQuery = async (req, res) => {
+/**
+ * @ignore
+ * @param req
+ * @param res
+ * @returns {Promise.<void>}
+ */
+exports.sequenceQuery = async (req, res) => {
     const sequence = req.body.sequence;
     const sequenceType = bionode.checkType(sequence);
 
 
 }
 
-// api.blast = async (req, res) => {
-//
-//     try {
-//         if (req.body) {
-//             console.log(req.body);
-//             const query = req.body.query;
-//             const db = req.body.db;
-//
-//             if (req.body.useString) {
-//                 blast.outputString(true);
-//             }
-//             if (query && query.length > 0) {
-//                 if (db && db.name && db.type) {
-//
-//                     const dbPath = path.join(dbRoot, db.name);
-//                     let output = null;
-//                     if (db.type === 'pin') {
-//                         output = await blast.blastP(dbPath, query);
-//                     } else {
-//                         output = await blast.blastN(dbPath, query);
-//                     }
-//                     return res.json({
-//                         data: output
-//                     });
-//                 } else {
-//                     return res.json({error: 'did not receive any dbs'});
-//                 }
-//             } else {
-//                 return res.json({error: 'did not receive query'});
-//             }
-//         } else {
-//             return res.json({error: 'did not receive body'});
-//         }
-//     } catch (err) {
-//         res.json({error: err.message});
-//     }
-// };
-
-module.exports = api;
+// module.exports = api;

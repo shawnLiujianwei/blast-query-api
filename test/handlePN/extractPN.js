@@ -5,6 +5,7 @@ const readline = require('readline');
 const fs = require('fs');
 const getRedis = require('../../src/lib/getRedis');
 const _ = require('lodash');
+const path = require('path');
 
 const RedisQueue = function (client) {
     this.jobs = [];
@@ -52,10 +53,18 @@ const redisToFile = async (redisQueue) => {
 const _parse = (array) => {
     const result = [];
     array.forEach(line => {
-        const array = line.split(/_sequence_|_Sequence_|_from_patent_|_from_Patent_/).slice(1).filter(t => {
-            return !/^\d*$/.test(t);
-        }).map(t => t.replace('_', ''));
-        Array.prototype.push.apply(result, array);
+        if (line.indexOf(':') === -1) {
+            const array = line.split(/_sequence_|_Sequence_|_from_patent_|_from_Patent_/).slice(1).filter(t => {
+                return !/^\d*$/.test(t);
+            }).map(t => t.replace('_', ''));
+            Array.prototype.push.apply(result, array);
+        } else {
+            const array = line.replace('>', '').split(':');
+            if (array.length)
+                result.push(array[0].replace('-', ''));
+        }
+
+
     });
     return result;
 }
@@ -94,7 +103,7 @@ const startRead = async (filePath) => {
 
 
 (async () => {
-    const file = '/Users/shawn-liu/work/patsnap/patnt/patnt';
-    startRead(file);
+    const file = './nt_all.fa';
+    startRead(path.join(__dirname, file));
     // await redisToFile();
 })();

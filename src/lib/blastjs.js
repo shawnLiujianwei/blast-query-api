@@ -1,3 +1,8 @@
+/**
+ * @module BlastCommand
+ * @author Liu Jianwei
+ */
+
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
@@ -32,20 +37,31 @@ const _parseFmt6 = (content, columns) => {
     return result;
 }
 
-const _blaster = async (type, db, query, limit, noCache) => {
+/**
+ *
+ * @param queryCommand, either blastp or blastn
+ * @param db
+ * @param query
+ * @param limit
+ * @param noCache
+ * @param outfmtPassed
+ * @returns {Promise.<*>}
+ * @private
+ */
+const _blaster = async (queryCommand, db, query, limit, noCache, outfmtPassed) => {
     try {
-        const cacheKey = `${db}_${type}_${query}`;
+        const outfmt = outfmtPassed || 0;
+        const cacheKey = `${db}_${queryCommand}_${query}_${outfmt}`;
         const pathW = '/tmp/' + Date.now() + '.fasta';
         fs.writeFileSync(pathW, query);
         const outFile = '/tmp/' + UUID() + '.out';
-        let blastCommand = type + ' -query ' + pathW + ' -out ' + outFile + ' -db ' + db;
+        let blastCommand = `${queryCommand} -query  ${pathW} -out ${outFile}  -db ${db} -outfmt ${outfmt} -num_threads ${os.cpus().length - 1}`;
         //const columns = ['qseqid', 'sseqid', 'evalue', 'bitscore'];
         // const columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore']
         // if (!blast.stringOutput) {
         //     blastCommand += ` -outfmt "6  ${columns.join(' ')}"`;
         // }
         // blastCommand += ` -max_target_seqs ${limit || 10}`;
-        blastCommand += ` -num_threads ${os.cpus().length - 1}`;
         logger.info('RUNNING', blastCommand);
         if (null === redisCache) {
             redisCache = await getRedisCache();
@@ -57,9 +73,12 @@ const _blaster = async (type, db, query, limit, noCache) => {
         if (!resultData) {
             await CP.execAsync(blastCommand);
             resultData = await fs.readFileAsync(outFile, 'utf8');
-            resultData = await parseFmt0(outFile);
-            await redisCache.setItem(cacheKey, resultData, 1800);// cache 3 minutes
-            logger.info(resultData);
+            if (outfmt === 0) {
+                resultData = await parseFmt0(outFile);
+            }
+            await redisCache.setItem(cacheKey, resultData, 18000);// cache 30 minutes
+            // logger.info(resultData);
+            logger.info('Succeed to query...');
         } else {
             logger.warn(`Using cache for command result`);
         }
@@ -69,7 +88,7 @@ const _blaster = async (type, db, query, limit, noCache) => {
         return resultData;
     } catch (err) {
         logger.error(err);
-        throw new Error(`error when exec: ${type}:${db}:${query}`);
+        throw new Error(`error when exec: ${blastCommand}:${db}:${query}`);
     }
 }
 
@@ -78,28 +97,48 @@ blast.outputString = (bool) => {
     blast.stringOutput = !!(!bool || bool === true);
 };
 
-blast.blastN = function (db, query, limit, noCache) {
-    return _blaster('blastn', db, query, limit, noCache);
+/**
+ * Query nucleotide on specific database
+ * @param {string}db
+ * @param {string}query the sequence piece
+ * @param {string=}limit
+ * @param {boolean=}noCache
+ * @param {string}outfmt=0
+ * @returns {Promise.<*>}
+ */
+exports.blastN = function (db, query, limit, noCache, outfmt) {
+    return _blaster('blastn', db, query, limit, noCache, outfmt);
 };
 
-blast.blastP = function (db, query, limit, noCache) {
-    return _blaster('blastp', db, query, limit, noCache);
+
+/**
+ * Query pr0tein on specific database
+ // * @function blastP
+ * @param {string}db
+ * @param {string}query the sequence piece
+ * @param {string=}limit
+ * @param {boolean=}noCache
+ * @param {string}outfmt=0
+ * @returns {Promise.<*>}
+ */
+exports.blastP = function (db, query, limit, noCache,outfmt) {
+    return _blaster('blastp', db, query, limit, noCache, outfmt);
 };
 
-blast.blastX = function (db, query) {
+exports.blastX = function (db, query) {
     return _blaster('blastx', db, query);
 };
 
-blast.tblastN = function (db, query) {
+exports.tblastN = function (db, query) {
     return _blaster('tblastn', db, query);
 };
 
-blast.tblastX = function (db, query) {
+exports.tblastX = function (db, query) {
     return _blaster('tblastx', db, query);
 };
 
 
-blast.makeDB = async (type, fileIn, outPath, name, cb) => {
+exports.makeDB = async (type, fileIn, outPath, name, cb) => {
 
     if (!type) {
         return cb(new Error('no type supplied'));
@@ -129,4 +168,4 @@ blast.makeDB = async (type, fileIn, outPath, name, cb) => {
 };
 
 
-module.exports = blast;
+// module.exports = blast;
