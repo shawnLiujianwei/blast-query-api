@@ -7,8 +7,6 @@
 const blast = require('../lib/blastjs');
 const listDB = require('../lib/listDB');
 const logger = require('../lib/getLogger')('api.controller.js');
-const api = {};
-const dbRoot = process.env.BLASTDB;
 const bionode = require('bionode-seq');
 const filterRequests = require('../lib/filterResults');
 
@@ -38,7 +36,7 @@ const _validatePost = (req, dbs) => {
     if (!dbs || dbs.length === 0) {
         throw new Error('there is no database files');
     }
-}
+};
 
 /**
  *
@@ -65,7 +63,6 @@ const _execQuery = async (dbs, command, query, requestQuery) => {
             } else {
                 results.push(temp);
             }
-
         } catch (err) {
             error = err;
             logger.error(err);
@@ -111,7 +108,7 @@ exports.queryProtein = async (req, res) => {
             message: err.message || 'failed to query from blast'
         });
     }
-}
+};
 
 /**
  * @summary query nucleotide
@@ -144,19 +141,19 @@ exports.queryNucleotide = async (req, res) => {
             message: err.message || 'failed to query from blast'
         });
     }
-}
+};
 
-/**
- * @ignore
- * @param req
- * @param res
- * @returns {Promise.<void>}
- */
-exports.sequenceQuery = async (req, res) => {
-    const sequence = req.body.sequence;
-    const sequenceType = bionode.checkType(sequence);
-
-
-}
+// /**
+//  * @ignore
+//  * @param req
+//  * @param res
+//  * @returns {Promise.<void>}
+//  */
+// exports.sequenceQuery = async (req, res) => {
+//     const sequence = req.body.sequence;
+//     const sequenceType = bionode.checkType(sequence);
+//
+//
+// }
 
 // module.exports = api;
