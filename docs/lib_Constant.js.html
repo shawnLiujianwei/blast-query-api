@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>DocStrap Module: APP</title>
+	<title>DocStrap Source: lib/Constant.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -67,201 +67,39 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: APP</h1>
+		<h1 class="page-title">Source: lib/Constant.js</h1>
+    
 <section>
-
-<header>
-    
-</header>
-
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>Created by shawn-liu on 17/9/22.</p></div>
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-	<dt class="tag-author method-doc-label method-doc-details-label">Author:</dt>
-	<dd class="tag-author">
-		<ul>
-			<li>Liu Jianwei</li>
-			</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="app.js.html">app.js</a>,
-				 <a href="app.js.html#sunlight-1-line-1">line 1</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="~HandleUnmatchedPath"><span class="type-signature">&lt;inner> </span>Handle Unmatched Path()</h4>
-    
-    
-    <p class="summary"><p>handle the unmatched path</p></p>
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>send the unmatched path to the doc page</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="app.js.html">app.js</a>,
-				 <a href="app.js.html#sunlight-1-line-22">line 22</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-
-    
-</article>
-
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * Created by shawn-liu on 17/12/1.
+ */
+module.exports = {
+    BlastDB: {
+        Nucl: 'nucleotide',
+        Prot: 'protein'
+    },
+    BlastCommand: {
+        Prot: 'blastp',
+        Nucl: 'blastn',
+        NuclOnProt: 'blastx',
+        ProtOnNucl: 'tblaxn'
+    },
+    SequenceType: {
+        DNA: 'dna',
+        Protein: 'protein'
+    }
+};
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -271,10 +109,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

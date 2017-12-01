@@ -9,6 +9,7 @@ const listDB = require('../lib/listDB');
 const logger = require('../lib/getLogger')('api.controller.js');
 const bionode = require('bionode-seq');
 const filterRequests = require('../lib/filterResults');
+const Constant = require('../lib/Constant');
 
 /**
  * @summary list all blast database
@@ -28,15 +29,6 @@ exports.getDBs = async (req, res) => {
     }
 };
 
-const _validatePost = (req, dbs) => {
-    const sequence = req.body.sequence;
-    if (!sequence) {
-        throw new Error('query can not be empty');
-    }
-    if (!dbs || dbs.length === 0) {
-        throw new Error('there is no database files');
-    }
-};
 
 /**
  *
@@ -77,28 +69,66 @@ const _execQuery = async (dbs, command, query, requestQuery) => {
     return results;
 };
 
+const _processRequest = async (sequence, queryType) => {
+    if (!sequence) {
+        throw new Error('query can not be empty');
+    }
+
+    const sequenceType = bionode.checkType(sequence);
+    if (sequenceType !== Constant.SequenceType.Protein && sequenceType !== Constant.SequenceType.DNA) {
+        throw new Error('the query sequence must be protein or dna');
+    }
+    const dbs = await listDB();
+    if (!dbs || dbs.length === 0) {
+        throw new Error('there is no database files');
+    }
+    const dbType = sequenceType === 'protein' ? 'protein' : 'nucleotide';
+    const targetDbs = dbs[dbType];
+    if (!targetDbs || !targetDbs.length) {
+        throw new Error(`There is no ${dbType} database`);
+    }
+    const blastCommand = (() => {
+        let command;
+        switch (queryType) {
+            case Constant.BlastCommand.Prot: {
+                command = sequenceType === Constant.SequenceType.Protein ? Constant.BlastCommand.Prot : Constant.BlastCommand.NuclOnProt;
+                break;
+            }
+            case Constant.BlastCommand.Nucl: {
+                command = sequenceType === Constant.SequenceType.Protein ? Constant.BlastCommand.ProtOnNucl : Constant.BlastCommand.Nucl;
+                break;
+            }
+            default: {
+                throw new Error(`Unsupported queryType: ${queryType}`);
+            }
+        }
+        return command;
+    })();
+    return {
+        sequenceType,
+        targetDbs,
+        blastCommand,
+        sequence
+    };
+};
+
 /**
- * @summary query protein
+ * @summary query on protein database
  * @description first will get all protein database and exec query on each db , and them combine the results
  * @param req
+ * @param {string}req.body.sequence should be protein or dna sequence
  * @param res
- * @see {@link module:BlastCommand.blastP}
+ * @see {@link module:BlastCommand.blastP|Query Protein} Or {@link module:BlastCommand.blastX|Query Nucleotide}
  * @returns {Promise.<void>}
  */
 exports.queryProtein = async (req, res) => {
     try {
-        const sequence = req.body.sequence;
-        const sequenceType = bionode.checkType(sequence);
-        if (sequenceType !== 'protein') {
-            throw new Error('the sequence is not valid protein');
-        }
-        const dbs = await listDB();
-        const targetDbs = dbs.protein;
-        _validatePost(req, targetDbs);
-        logger.info('query protein from dbs:', targetDbs);
-        const results = await _execQuery(targetDbs, 'blastP', sequence, req.query);
+        const {targetDbs, sequence, queryCommand, sequenceType} = _processRequest(req.body.sequence, Constant.BlastCommand.Prot);
+        logger.info(`query ${sequenceType}  from protein dbs: ${targetDbs}`);
+        const results = await _execQuery(targetDbs, queryCommand, sequence, req.query);
         res.json({
             success: true,
+            queryCommand,
             data: results
         });
     } catch (err) {
@@ -114,24 +144,19 @@ exports.queryProtein = async (req, res) => {
  * @summary query nucleotide
  * @description first will get all nucleotide database and exec query on each db , and them combine the results
  * @param req
+ * @param {string}req.body.sequence should be protein or nucleotide sequence
  * @param res
- * @see {@link module:BlastCommand.blastN}
+ * @see {@link module:BlastCommand.blastN|Query Nucleotide} Or {@link module:BlastCommand.tblastN|Query Protein}
  * @returns {Promise.<void>}
  */
 exports.queryNucleotide = async (req, res) => {
     try {
-        const sequence = req.body.sequence;
-        const sequenceType = bionode.checkType(sequence);
-        if (sequenceType !== 'dna' && sequenceType !== 'rna') {
-            throw new Error('the sequence is not valid nucleotide');
-        }
-        const dbs = await listDB();
-        const targetDbs = dbs.nucleotide;
-        _validatePost(req, targetDbs);
-        logger.info('query nucleotide from dbs:', targetDbs);
-        const results = await _execQuery(targetDbs, 'blastN', sequence, req.query);
+        const {targetDbs, sequence, queryCommand, sequenceType} = _processRequest(req.body.sequence, Constant.BlastCommand.Prot);
+        logger.info(`query ${sequenceType}  from nucleotide dbs: ${targetDbs}`);
+        const results = await _execQuery(targetDbs, queryCommand, sequence, req.query);
         res.json({
             success: true,
+            queryCommand,
             data: results
         });
     } catch (err) {

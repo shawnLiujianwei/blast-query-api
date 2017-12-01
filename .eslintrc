@@ -3,16 +3,17 @@
     "plugins": [
         "mocha"
     ],
-//    "parserOptions": {
-//        "ecmaVersion": 2015,
-//        "sourceType": "module"
-//    },
+    //    "parserOptions": {
+    //        "ecmaVersion": 2015,
+    //        "sourceType": "module"
+    //    },
     "rules": {
         "indent": [
-            "error",
+            "warn",
             4
         ],
         "no-plusplus": "warn",
+        "object-curly-spacing": "off",
         "max-len": "off",
         "no-underscore-dangle": "off",
         "prefer-arrow-callback": "error",
