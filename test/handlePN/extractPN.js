@@ -6,6 +6,7 @@ const fs = require('fs');
 const getRedis = require('../../src/lib/getRedis');
 const _ = require('lodash');
 const path = require('path');
+const Promise = require('bluebird');
 
 const RedisQueue = function (client) {
     this.jobs = [];
@@ -16,7 +17,13 @@ RedisQueue.prototype.add = async function (job) {
     const self = this;
     if (self.jobs.length > 100) {
         const toExecArray = self.jobs.splice(0, 100).map(t => [t, t]);
-        await self.client.hmsetAsync(self.key, _.flatten(toExecArray));
+        try {
+            await self.client.hmsetAsync(self.key, _.flatten(toExecArray));
+        } catch (err) {
+            console.error('redis crash, will wait 10s');
+            console.error(err);
+            await Promise.delay(10000);
+        }
     }
     Array.prototype.push.apply(self.jobs, job);
 }
@@ -29,7 +36,14 @@ RedisQueue.prototype.clean = async function () {
 RedisQueue.prototype.flush = async function () {
     const self = this;
     const toExecArray = self.jobs.splice(0, 100).map(t => [t, t]);
-    await self.client.hmsetAsync(self.key, _.flatten(toExecArray));
+    try {
+        await self.client.hmsetAsync(self.key, _.flatten(toExecArray));
+    } catch (err) {
+        console.error('redis crash, will wait 10s');
+        console.error(err);
+        await Promise.delay(10000);
+    }
+
 }
 
 RedisQueue.prototype.getAll = async function () {
@@ -45,7 +59,7 @@ const redisToFile = async (redisQueue) => {
     }
     const allKeys = await redisQueue.getAll();
     console.log(allKeys);
-    fs.writeFileSync('./pn.txt', JSON.stringify(allKeys));
+    fs.writeFileSync('./patnt.txt', JSON.stringify(allKeys));
     process.exit(1);
 }
 
@@ -53,17 +67,22 @@ const redisToFile = async (redisQueue) => {
 const _parse = (array) => {
     const result = [];
     array.forEach(line => {
-        if (line.indexOf(':') === -1) {
-            const array = line.split(/_sequence_|_Sequence_|_from_patent_|_from_Patent_/).slice(1).filter(t => {
+        const regex1 = /_sequence_|_Sequence_|_from_patent_|_from_Patent_/;
+        if (line.match(regex1)) {
+            const array = line.split(regex1).slice(1).filter(t => {
                 return !/^\d*$/.test(t);
             }).map(t => t.replace('_', ''));
             Array.prototype.push.apply(result, array);
-        } else {
+        } else if (line.indexOf(":") !== -1) {
             const array = line.replace('>', '').split(':');
             if (array.length)
                 result.push(array[0].replace('-', ''));
+        } else if (line.indexOf('.') && line.indexOf('_')) {
+            const array = line.split('_');
+            result.push(array[1]+array[2]);
+        } else {
+            console.log('----------------------------------------unmatched format:' + line);
         }
-
 
     });
     return result;
@@ -103,7 +122,8 @@ const startRead = async (filePath) => {
 
 
 (async () => {
-    const file = './nt_all.fa';
-    startRead(path.join(__dirname, file));
+    const file = '/Users/shawn-liu/work/patsnap/patnt/patnt';
+    startRead(file)
+    // startRead(path.join(__dirname, file));
     // await redisToFile();
 })();
